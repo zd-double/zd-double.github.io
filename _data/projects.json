@@ -1,0 +1,30 @@
+[
+	{
+		"name": "tera",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/baidu/tera",
+		"date": "Jun 2016",
+		"tags": ["storage system","C++"]
+	},
+	{
+		"name": "galaxy",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/baidu/galaxy",
+		"date": "Jun 2016",
+		"tags": ["distributed operating system","C++"]
+	},
+	{
+		"name": "ins",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/baidu/ins",
+		"date": "Jun 2016",
+		"tags": ["coordinate services","C++"]
+	},
+	{
+		"name": "shuttle",
+		"image": "placeholder.jpg",
+		"url": "https://github.com/baidu/shuttle",
+		"date": "Jun 2016",
+		"tags": ["fast computing framework","C++"]
+	}
+]
