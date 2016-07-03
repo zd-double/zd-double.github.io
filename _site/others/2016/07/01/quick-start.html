@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>Quick Start - sofa-pbrpc</title>
+        <meta name="author" content="sofa-pbrpc" />
+        <meta name="description" content="Quick Start" />
+        <meta name="keywords" content="Quick Start, sofa-pbrpc, others" />
+
+        <meta content="0" property="fb:app_id">
+        <meta content="sofa-pbrpc" property="og:site_name">
+        
+          <meta content="Quick Start" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="My Personal Blog" property="og:description">
+        
+        
+          <meta content="/others/2016/07/01/quick-start.html" property="og:url">
+        
+        
+          <meta content="2016-07-01T21:50:39+08:00" property="article:published_time">
+          <meta content="/about/" property="article:author">
+        
+        
+          <meta content="http://aboutashu.com/static/img/logo-high-resolution.png" property="og:image">
+        
+        
+          
+          <meta content="others" property="article:section">
+          
+        
+        
+          
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@\#">
+        <meta name="twitter:creator" content="@\#">
+        
+          <meta name="twitter:title" content="Quick Start">
+        
+        
+          <meta name="twitter:url" content="/others/2016/07/01/quick-start.html">
+        
+        
+          <meta name="twitter:description" content="My Personal Blog">
+        
+        
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <!-- FontAwesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/74dfc6cf47.css">
+
+        <!-- Core BootStrap CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Material Design CSS -->
+        <link rel="stylesheet" href="/static/css/bootstrap-material-design.min.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/static/css/syntax.css">
+
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="/static/css/thickbox.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" href="/static/css/projects.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72862926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </head>
+
+    <body class="home overflow-hidden">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header-panel shadow-z-2">
+    <div class="container">
+    <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+      <div class="row-picture">
+        <img id="about" class="logo-img" src="http://aboutashu.com/hcz-jekyll-blog/static/img/avatar.png" height="75px" width="75px">
+      </div>
+      <div class="row-details">
+      <h4 class="list-group-item-heading">sofa-pbrpc</h4>
+      <p class="list-group-item-text">A light-weight RPC implement of google protobuf RPC framework.</p>
+      <div class="social-icons">
+	
+        <a class="icon" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-skype"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-stack-exchange"></i></a>
+    
+</div>
+      </div>
+        <div class="navbar-header pull-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-2x fa-bars"></i>
+            </button>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+      <h2 class="blog-title-pro">Quick Start</h2>
+      <p class="info">
+      
+      <span class="time">01 Jul 2016</span>
+      
+      
+    <span class="categories">
+        &raquo; <a href="/category/others">others</a>
+    </span>
+    
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="container main outer">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                    <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary post">
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item quick-start.html"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  quick-start.html"><a href="/about/"><i class="fa fa-comments"></i> About</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  quick-start.html"><a href="/projects/"><i class="fa fa-desktop"></i> Projects</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  quick-start.html"><a href="#"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  quick-start.html"><a href="https://github.com/zd-double/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  quick-start.html"><a href="/feed.xml"><i class="fa fa-feed"></i> XML Feed</a></li>
+
+</ul>
+    </div>
+    </nav>
+
+            </div> <!-- end /.col-md-3 -->
+
+            <div class="col-md-9 col-xs-12 full">
+                <div class="post-content well">
+<article class="content">
+    <div class="post"><h1 id="section">快速使用三部曲</h1>
+
+<p>使用sofa-pbrpc只需要三步：</p>
+
+<ul>
+  <li>
+    <p>定义通讯协议</p>
+  </li>
+  <li>
+    <p>实现Server</p>
+  </li>
+  <li>
+    <p>实现Client</p>
+  </li>
+</ul>
+
+<p>样例代码参见“sample/echo”。</p>
+
+<h2 id="section-1">定义通讯协议</h2>
+
+<p>定义协议只需要编写一个proto文件即可。</p>
+
+<p>范例：echo_service.proto
+```c++
+package sofa.pbrpc.test;
+option cc_generic_services = true;</p>
+
+<p>// 定义请求消息
+message EchoRequest {
+    required string message = 1;
+}
+// 定义回应消息
+message EchoResponse {
+    required string message = 1;
+}</p>
+
+<p>// 定义RPC服务，可包含多个方法（这里只列出一个）
+service EchoServer {
+    rpc Echo(EchoRequest) returns(EchoResponse);
+}
+```</p>
+
+<p>使用protoc编译’echo_service.proto’，生成接口文件’echo_service.pb.h’和’echo_service.pb.cc’。</p>
+
+<blockquote>
+  <p><strong>注意：</strong></p>
+
+  <p>package会被映射到C++中的namespace，为了避免冲突建议使用package；
+需要设置“cc_generic_services”，以通知protoc工具生成RPC框架代码；
+这里EchoRequest和EchoResponse的成员完全相同，在实际应用中可以设置不同的成员；</p>
+</blockquote>
+
+<h2 id="server">实现Server</h2>
+
+<h3 id="section-2">头文件</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
+</span> <span class="cp">#include "echo_service.pb.h"   // service接口定义头文件
+</span> <span class="err">```</span>
+
+<span class="cp">### 实现服务
+</span><span class="err">```</span><span class="n">c</span><span class="o">++</span>
+<span class="k">class</span> <span class="nc">EchoServerImpl</span> <span class="o">:</span> <span class="k">public</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">EchoServerImpl</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">EchoServerImpl</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Echo</span><span class="p">(</span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span> <span class="n">controller</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span><span class="o">*</span> <span class="n">request</span><span class="p">,</span>
+                      <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span><span class="o">*</span> <span class="n">response</span><span class="p">,</span>
+                      <span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Closure</span><span class="o">*</span> <span class="n">done</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span> <span class="n">cntl</span> <span class="o">=</span>
+            <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">controller</span><span class="p">);</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"Echo(): request message from %s: %s"</span><span class="p">,</span>
+            <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">RemoteAddress</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">request</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="n">response</span><span class="o">-&gt;</span><span class="n">set_message</span><span class="p">(</span><span class="s">"echo message: "</span> <span class="o">+</span> <span class="n">request</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">());</span>
+        <span class="n">done</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+<blockquote>
+  <p><strong>注意：</strong>
+服务完成后必须调用done-&gt;Run()，通知RPC系统服务完成，触发发送Response；
+在调了done-&gt;Run()之后，Echo的所有四个参数都不再能访问；
+done-Run()可以分派到其他线程中执行，以实现了真正的异步处理；
+注册和启动服务</p>
+</blockquote>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 设置日志级别
+</span>    <span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">);</span>
+    
+    <span class="c1">// 定义RpcServer
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcServerOptions</span> <span class="n">options</span><span class="p">;</span>
+    <span class="n">options</span><span class="p">.</span><span class="n">work_thread_num</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcServer</span> <span class="n">rpc_server</span><span class="p">(</span><span class="n">options</span><span class="p">);</span>
+
+    <span class="c1">// 启动RpcServer
+</span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rpc_server</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="s">"0.0.0.0:12321"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">"start server failed"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EXIT_FAILURE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 创建和注册服务
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer</span><span class="o">*</span> <span class="n">echo_service</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EchoServerImpl</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rpc_server</span><span class="p">.</span><span class="n">RegisterService</span><span class="p">(</span><span class="n">echo_service</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">"register service failed"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EXIT_FAILURE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 等待SIGINT/SIGTERM退出信号
+</span>    <span class="n">rpc_server</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+
+    <span class="c1">// 停止Server
+</span>    <span class="n">rpc_server</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="client">实现Client</h2>
+
+<p>Client支持同步和异步两种调用方式：</p>
+
+<p>同步调用时，调用线程会被阻塞，直到收到回复或者超时；
+异步调用时，调用线程不会被阻塞，收到回复或者超时会调用用户提供的回调函数；</p>
+
+<h3 id="section-3">头文件</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
+</span> <span class="cp">#include "echo_service.pb.h"   // service接口定义头文件
+</span></code></pre>
+</div>
+<p>### 同步调用</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">);</span>
+
+    <span class="c1">// 定义RpcClient对象，管理RPC的所有资源
+</span>    <span class="c1">// 通常来说，一个client程序只需要一个RpcClient实例
+</span>    <span class="c1">// 可以通过RpcClientOptions指定一些配置参数，譬如线程数、流控等
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcClientOptions</span> <span class="n">client_options</span><span class="p">;</span>
+    <span class="n">client_options</span><span class="p">.</span><span class="n">work_thread_num</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcClient</span> <span class="n">rpc_client</span><span class="p">(</span><span class="n">client_options</span><span class="p">);</span>
+
+    <span class="c1">// 定义RpcChannel对象，代表一个消息通道，需传入Server端服务地址
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcChannel</span> <span class="n">rpc_channel</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_client</span><span class="p">,</span> <span class="s">"127.0.0.1:12321"</span><span class="p">);</span>
+ 
+    <span class="c1">// 定义EchoServer服务的桩对象EchoServer_Stub，使用上面定义的消息通道传输数据
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer_Stub</span> <span class="n">stub</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_channel</span><span class="p">);</span>
+ 
+    <span class="c1">// 定义和填充调用方法的请求消息
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span> <span class="n">request</span><span class="p">;</span>
+    <span class="n">request</span><span class="p">.</span><span class="n">set_message</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
+ 
+    <span class="c1">// 定义方法的回应消息，会在调用返回后被填充
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span> <span class="n">response</span><span class="p">;</span>
+ 
+    <span class="c1">// 定义RpcController对象，用于控制本次调用
+</span>    <span class="c1">// 可以设置超时时间、压缩方式等；默认超时时间为10秒，默认压缩方式为无压缩
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span> <span class="n">controller</span><span class="p">;</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">SetTimeout</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+ 
+    <span class="c1">// 发起调用，最后一个参数为NULL表示为同步调用
+</span>    <span class="n">stub</span><span class="p">.</span><span class="n">Echo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">controller</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">request</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">response</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="c1">// 调用完成后，检查是否失败
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">Failed</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// 调用失败后的错误处理，譬如可以进行重试
+</span>        <span class="n">SLOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">"request failed: %s"</span><span class="p">,</span> <span class="n">controller</span><span class="p">.</span><span class="n">ErrorText</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-4">异步调用</h3>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">// 定义回调函数
+</span><span class="kt">void</span> <span class="nf">EchoCallback</span><span class="p">(</span><span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span> <span class="n">cntl</span><span class="p">,</span>
+        <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span><span class="o">*</span> <span class="n">request</span><span class="p">,</span>
+        <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span><span class="o">*</span> <span class="n">response</span><span class="p">,</span>
+        <span class="kt">bool</span><span class="o">*</span> <span class="n">callbacked</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 打印一些日志
+</span>    <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"RemoteAddress=%s"</span><span class="p">,</span> <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">RemoteAddress</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"IsRequestSent=%s"</span><span class="p">,</span> <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">IsRequestSent</span><span class="p">()</span> <span class="o">?</span> <span class="s">"true"</span> <span class="o">:</span> <span class="s">"false"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cntl</span><span class="o">-&gt;</span><span class="n">IsRequestSent</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"LocalAddress=%s"</span><span class="p">,</span> <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">LocalAddress</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"SentBytes=%ld"</span><span class="p">,</span> <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">SentBytes</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 检查调用是否失败
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">cntl</span><span class="o">-&gt;</span><span class="n">Failed</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">"request failed: %s"</span><span class="p">,</span> <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">ErrorText</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">,</span> <span class="s">"request succeed: %s"</span><span class="p">,</span> <span class="n">response</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 可以在回调函数中执行一些释放资源的操作
+</span>    <span class="k">delete</span> <span class="n">cntl</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">request</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">response</span><span class="p">;</span>
+
+    <span class="o">*</span><span class="n">callbacked</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">);</span>
+
+    <span class="c1">// 定义RpcClient
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcClientOptions</span> <span class="n">client_options</span><span class="p">;</span>
+    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcClient</span> <span class="n">rpc_client</span><span class="p">(</span><span class="n">client_options</span><span class="p">);</span>
+
+    <span class="c1">// 定义RpcChannel
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcChannel</span> <span class="n">rpc_channel</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_client</span><span class="p">,</span> <span class="s">"127.0.0.1:12321"</span><span class="p">);</span>
+
+    <span class="c1">// 定义EchoServer服务的桩对象
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer_Stub</span> <span class="n">stub</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_channel</span><span class="p">);</span>
+
+    <span class="c1">// 创建Request和Response消息
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span><span class="o">*</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span><span class="p">();</span>
+    <span class="n">request</span><span class="o">-&gt;</span><span class="n">set_message</span><span class="p">(</span><span class="s">"Hello from qinzuoyan01"</span><span class="p">);</span>
+    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span><span class="o">*</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span><span class="p">();</span>
+
+    <span class="c1">// 创建RpcController
+</span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span> <span class="n">cntl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="p">();</span>
+    <span class="n">cntl</span><span class="o">-&gt;</span><span class="n">SetTimeout</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+
+    <span class="c1">// 创建回调函数，回调函数可以预绑定一些参数，譬如callbacked
+</span>    <span class="kt">bool</span> <span class="n">callbacked</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Closure</span><span class="o">*</span> <span class="n">done</span> <span class="o">=</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">NewClosure</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="n">EchoCallback</span><span class="p">,</span> <span class="n">cntl</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">callbacked</span><span class="p">);</span>
+
+    <span class="c1">// 发起调用，最后一个参数非NULL表示为异步调用
+</span>    <span class="n">stub</span><span class="p">.</span><span class="n">Echo</span><span class="p">(</span><span class="n">cntl</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">done</span><span class="p">);</span>
+
+    <span class="c1">// 等待回调完成，此处为简单的变量探测方式，不推荐
+</span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">callbacked</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">usleep</span><span class="p">(</span><span class="mi">100000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>注意：</strong></p>
+
+  <p>异步调用传入的controller、request、response参数，在回调函数执行之前需一直保持有效；
+回调函数的执行会分配到专门的回调线程中运行，可以通过设置RpcClientOptions的callback_thread_num来配置回调线程数；</p>
+</blockquote>
+</div>
+    <hr />
+    <div class="share-page">
+    Share this on &rarr;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="\#">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google + -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Facebook -->
+<div class="fb-share-button" data-href="/others/2016/07/01/quick-start.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</article>
+<hr />
+
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                
+                <li class="relatedPost">
+                    <a href="/others/2016/07/01/benchmark.html">Benchmark</a>
+                    
+                        <small>(Categories: <a href="/category/others">others</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+
+    </ul>
+    </div>
+
+
+<div class="PageNavigation">
+  
+    <a class="prev pull-left" href="/others/2016/07/01/benchmark.html">&laquo; Benchmark</a>
+  
+  
+    <a class="next pull-right" href="/jekyll/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc! &raquo;</a>
+  
+</div>
+
+
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = "sofa-pbrpc";
+        var disqus_identifier = "_Quick Start";
+        var disqus_title = "Quick Start";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
+</div>
+</div>
+
+                <div class="row">
+                  <div class="col-md-12 col-xs-12 footer">
+                <footer>
+                    © Copyright text here
+                     
+                    - <a href="#">Privacy link</a> - Powered by Jekyll.
+                    
+                </footer>
+                <div align="center">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <!-- hcz-jekyll -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-0776433630785969"
+                       data-ad-slot="9690958902"
+                       data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+            </div>
+                </div>
+            </div> <!-- end /.col-md-9 -->
+        </div> <!-- end /.row -->
+
+    </div> <!-- end /.container -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+        <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="/static/js/thickbox-compressed.js"></script>
+        <script src="/static/js/material.min.js"></script>
+        <script src="/static/js/main.js"></script>
+        <script src="/static/js/projects.js"></script>
+    </body>
+</html>
