@@ -5,8 +5,8 @@
     <description>My Personal Blog</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Jul 2016 02:26:31 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Jul 2016 02:26:31 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Jul 2016 10:03:22 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Jul 2016 10:03:22 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -46,27 +46,27 @@
 
 &lt;h1 id=&quot;section-2&quot;&gt;构建&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/构建指引&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/构建指引&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/构建指引&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-3&quot;&gt;快速使用&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/快速使用&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/快速使用&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/快速使用&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-4&quot;&gt;高级使用&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/高级使用&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/高级使用&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/高级使用&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;python&quot;&gt;Python客户端&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/Python客户端&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/Python客户端&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/Python客户端&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;rpc&quot;&gt;RPC协议&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/RPC协议&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/RPC协议&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/RPC协议&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-5&quot;&gt;性能&lt;/h1&gt;
 
-&lt;p&gt;参见 https://github.com/BaiduPS/sofa-pbrpc/wiki/性能&lt;/p&gt;
+&lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/性能&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/性能&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
         <link>/jekyll/2016/07/01/welcome-to-sofa-pbrpc.html</link>
@@ -74,6 +74,20 @@
         
         
         <category>jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>User List</title>
+        <description>&lt;p&gt;| company | product line | cluster scale | owner | recommendation |
+| ——-:| ————:| ————-:| —–:| ————–:|&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
+        <link>/about/2016/07/01/user-list.html</link>
+        <guid isPermaLink="true">/about/2016/07/01/user-list.html</guid>
+        
+        
+        <category>about</category>
         
       </item>
     
@@ -99,27 +113,26 @@
 
 &lt;h2 id=&quot;section-1&quot;&gt;定义通讯协议&lt;/h2&gt;
 
-&lt;p&gt;定义协议只需要编写一个proto文件即可。&lt;/p&gt;
+&lt;p&gt;定义协议只需要编写一个proto文件即可。范例：echo_service.proto&lt;/p&gt;
 
-&lt;p&gt;范例：echo_service.proto
-```c++
-package sofa.pbrpc.test;
-option cc_generic_services = true;&lt;/p&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sofa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pbrpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;option&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cc_generic_services&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;// 定义请求消息
-message EchoRequest {
-    required string message = 1;
-}
-// 定义回应消息
-message EchoResponse {
-    required string message = 1;
-}&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;// 定义请求消息
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EchoRequest&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 定义回应消息
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;// 定义RPC服务，可包含多个方法（这里只列出一个）
-service EchoServer {
-    rpc Echo(EchoRequest) returns(EchoResponse);
-}
-```&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;// 定义RPC服务，可包含多个方法（这里只列出一个）
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EchoServer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rpc&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Echo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EchoRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;使用protoc编译’echo_service.proto’，生成接口文件’echo_service.pb.h’和’echo_service.pb.cc’。&lt;/p&gt;
 

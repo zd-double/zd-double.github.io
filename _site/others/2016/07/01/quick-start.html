@@ -221,27 +221,26 @@
 
 <h2 id="section-1">定义通讯协议</h2>
 
-<p>定义协议只需要编写一个proto文件即可。</p>
+<p>定义协议只需要编写一个proto文件即可。范例：echo_service.proto</p>
 
-<p>范例：echo_service.proto
-```c++
-package sofa.pbrpc.test;
-option cc_generic_services = true;</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">package</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">;</span>
+<span class="n">option</span> <span class="n">cc_generic_services</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 
-<p>// 定义请求消息
-message EchoRequest {
-    required string message = 1;
-}
-// 定义回应消息
-message EchoResponse {
-    required string message = 1;
-}</p>
+<span class="c1">// 定义请求消息
+</span><span class="n">message</span> <span class="n">EchoRequest</span> <span class="p">{</span>
+    <span class="n">required</span> <span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 定义回应消息
+</span><span class="n">message</span> <span class="n">EchoResponse</span> <span class="p">{</span>
+    <span class="n">required</span> <span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>// 定义RPC服务，可包含多个方法（这里只列出一个）
-service EchoServer {
-    rpc Echo(EchoRequest) returns(EchoResponse);
-}
-```</p>
+<span class="c1">// 定义RPC服务，可包含多个方法（这里只列出一个）
+</span><span class="n">service</span> <span class="n">EchoServer</span> <span class="p">{</span>
+    <span class="n">rpc</span> <span class="n">Echo</span><span class="p">(</span><span class="n">EchoRequest</span><span class="p">)</span> <span class="n">returns</span><span class="p">(</span><span class="n">EchoResponse</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>使用protoc编译’echo_service.proto’，生成接口文件’echo_service.pb.h’和’echo_service.pb.cc’。</p>
 
@@ -507,6 +506,13 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
     
         
             
+        
+    
+
+    
+    
+        
+            
                 
                 <div class="panel-body">
                 <h4>Related Posts</h4>
@@ -534,7 +540,7 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
     <a class="prev pull-left" href="/others/2016/07/01/benchmark.html">&laquo; Benchmark</a>
   
   
-    <a class="next pull-right" href="/jekyll/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc! &raquo;</a>
+    <a class="next pull-right" href="/about/2016/07/01/user-list.html">User List &raquo;</a>
   
 </div>
 

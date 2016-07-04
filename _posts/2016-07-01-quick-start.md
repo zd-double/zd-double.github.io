@@ -19,9 +19,8 @@ categories: others
 
 ## 定义通讯协议
 
-定义协议只需要编写一个proto文件即可。
+定义协议只需要编写一个proto文件即可。范例：echo_service.proto
 
-范例：echo_service.proto
 ```c++
 package sofa.pbrpc.test;
 option cc_generic_services = true;
