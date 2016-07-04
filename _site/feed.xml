@@ -5,8 +5,8 @@
     <description>My Personal Blog</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Jul 2016 10:03:22 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Jul 2016 10:03:22 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Jul 2016 10:06:14 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Jul 2016 10:06:14 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -74,20 +74,6 @@
         
         
         <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>User List</title>
-        <description>&lt;p&gt;| company | product line | cluster scale | owner | recommendation |
-| ——-:| ————:| ————-:| —–:| ————–:|&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
-        <link>/about/2016/07/01/user-list.html</link>
-        <guid isPermaLink="true">/about/2016/07/01/user-list.html</guid>
-        
-        
-        <category>about</category>
         
       </item>
     
