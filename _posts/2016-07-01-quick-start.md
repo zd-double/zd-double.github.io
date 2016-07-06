@@ -2,7 +2,7 @@
 layout: post
 title: Quick Start  
 date:   2016-07-01 13:50:39
-categories: others
+categories: blog
 ---
 
 # 快速使用三部曲

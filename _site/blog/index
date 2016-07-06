@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>Others - sofa-pbrpc</title>
+        <title>Blog - sofa-pbrpc</title>
         <meta name="author" content="zd-double" />
-        <meta name="description" content="Others" />
-        <meta name="keywords" content="Others, sofa-pbrpc, others" />
+        <meta name="description" content="Blog" />
+        <meta name="keywords" content="Blog, sofa-pbrpc, " />
 
         <meta content="0" property="fb:app_id">
         <meta content="sofa-pbrpc" property="og:site_name">
         
-          <meta content="Others" property="og:title">
+          <meta content="Blog" property="og:title">
         
         
           <meta content="article" property="og:type">
@@ -23,26 +23,22 @@
           <meta content="My Personal Blog" property="og:description">
         
         
-          <meta content="https://zd-double.github.io/category/others" property="og:url">
+          <meta content="https://zd-double.github.io/blog/" property="og:url">
         
         
         
           <meta content="http://aboutashu.com/static/img/logo-high-resolution.png" property="og:image">
         
         
-          
-          <meta content="others" property="article:section">
-          
-        
         
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@\#">
         <meta name="twitter:creator" content="@\#">
         
-          <meta name="twitter:title" content="Others">
+          <meta name="twitter:title" content="Blog">
         
         
-          <meta name="twitter:url" content="https://zd-double.github.io/category/others">
+          <meta name="twitter:url" content="https://zd-double.github.io/blog/">
         
         
           <meta name="twitter:description" content="My Personal Blog">
@@ -117,14 +113,10 @@
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
-      <h2 class="blog-title-pro">Others</h2>
+      <h2 class="blog-title-pro">Blog</h2>
       <p class="info">
       
       
-    <span class="categories">
-        &raquo; <a href="/category/others">others</a>
-    </span>
-    
       </p>
       </div>
       </div>
@@ -135,7 +127,7 @@
             <div class="col-md-3 col-xs-12">
                     <nav class="menu">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="list-separator nav navbar-nav well well-primary posts_by_category">
+    <ul class="list-separator nav navbar-nav well well-primary post">
 
 	
 	
@@ -143,7 +135,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="//"><i class="fa fa-home"></i> Home</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item blog"><a href="//"><i class="fa fa-home"></i> Home</a></li>
 
 	
 	
@@ -151,7 +143,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="//blog/"><i class="fa fa-comments"></i> Blog</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item blog"><a href="//blog/"><i class="fa fa-comments"></i> Blog</a></li>
 
 	
 	
@@ -159,7 +151,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="//projects/"><i class="fa fa-desktop"></i> Projects</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  blog"><a href="//projects/"><i class="fa fa-desktop"></i> Projects</a></li>
 
 	
 	
@@ -167,7 +159,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="//benchmark/"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  blog"><a href="//benchmark/"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
 
 	
 	
@@ -175,7 +167,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="https://github.com/zd-double/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  blog"><a href="https://github.com/zd-double/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
 
 	
 	
@@ -183,7 +175,7 @@
 	
 	
 	
-	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  others"><a href="//documents/"><i class="fa fa-feed"></i> Documents</a></li>
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  blog"><a href="//documents/"><i class="fa fa-feed"></i> Documents</a></li>
 
 </ul>
     </div>
@@ -192,33 +184,83 @@
             </div> <!-- end /.col-md-3 -->
 
             <div class="col-md-9 col-xs-12 full">
-                <div class="content well">
-<header id="post-header">
-    <h1 id="post-subtitle">Articles by category: <em class="text-muted">others</em></h1>
-</header>
+                <div class="post-content well">
+<article class="content">
+    <div class="post"><div class="well">
+    <div class="list-group">
+      
+    </div>
+   
 
-<div id="post-content">
+    <!-- Pagination links -->
+    
+</div><!-- end #home -->
+</div>
     <hr />
-    
-        
-        
-            
-                <a href="/category/benchmark" class="btn btn-sm btn-default btn-raised">benchmark</a>
-            
-        
-    
-        
-        
-            
-                <a href="/category/blog" class="btn btn-sm btn-default btn-raised">blog</a>
-            
-        
-    
-    <hr />
+    <div class="share-page">
+    Share this on &rarr;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="\#">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google + -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Facebook -->
+<div class="fb-share-button" data-href="https://zd-double.github.io/blog/" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</article>
+<hr />
+
 
     
-        <p>There are no posts in this categories.</p>
     
+        
+    
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+<div class="PageNavigation">
+  
+  
+</div>
+
+
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = "zddouble";
+        var disqus_identifier = "https://zd-double.github.io_Blog";
+        var disqus_title = "Blog";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
 </div>
 </div>
 

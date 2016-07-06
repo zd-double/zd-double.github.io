@@ -11,20 +11,20 @@ urls:
       url: /
       icon: fa-home
       layout: post
-    - text: About
-      url: /about/
+    - text: Blog
+      url: /blog/
       icon: fa-comments
     - text: Projects
       url: /projects/
       icon: fa-desktop
     - text: Benchmark
-      url: /about/
+      url: /benchmark/
       icon: fa-graduation-cap
     - text: Github
       url: https://github.com/zd-double/sofa-pbrpc
       icon: fa-github
-    - text: XML Feed
-      url: /feed.xml
+    - text: Documents
+      url: /documents/
       icon: fa-feed
       
 social:
@@ -48,7 +48,7 @@ enableTags: true
 tagarray: []
 
 url: "https://zd-double.github.io"
-#baseurl: "/sofa-pbrpc-blog"
+baseurl: "/"
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"
