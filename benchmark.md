@@ -1,11 +1,20 @@
 ---
 layout: page
-title: sofa-pbrpc
+title: Benchmark
 permalink: /benchmark/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# 极限QPS和吞吐
+>**测试方法**
+>
+>使用不同包大小测试server的极限QPS;
 
-You can find the source code for the Jekyll theme at: [github.com/brijeshb42/bitwiser-material](https://github.com/brijeshb42/bitwiser-material)
+>**测试环境**
+>
+>CPU : 20 core 
+>
+>Memory : 64G
+>
+>Kernel : 2.6.32_1-17-0-0
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+![my alternate text](/assets/benchmark.png)

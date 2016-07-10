@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sofa-pbrpc</title>
-    <description>My Personal Blog</description>
-    <link>https://zd-double.github.io//</link>
-    <atom:link href="https://zd-double.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jul 2016 01:23:22 +0800</pubDate>
-    <lastBuildDate>Thu, 07 Jul 2016 01:23:22 +0800</lastBuildDate>
+    <description>Sofa-pbrpc Blog</description>
+    <link>https://zd-double.github.io/</link>
+    <atom:link href="https://zd-double.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 11 Jul 2016 00:12:09 +0800</pubDate>
+    <lastBuildDate>Mon, 11 Jul 2016 00:12:09 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -68,9 +68,123 @@
 
 &lt;p&gt;参见&lt;a href=&quot;https://github.com/BaiduPS/sofa-pbrpc/wiki/性能&quot;&gt;https://github.com/BaiduPS/sofa-pbrpc/wiki/性能&lt;/a&gt;&lt;/p&gt;
 </description>
+        <pubDate>Fri, 01 Jul 2016 22:50:39 +0800</pubDate>
+        <link>https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html</link>
+        <guid isPermaLink="true">https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Installing</title>
+        <description>&lt;p&gt;本文档指引你如何构建sofa-pbrpc，包含：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;编译依赖&lt;/li&gt;
+  &lt;li&gt;编译&lt;/li&gt;
+  &lt;li&gt;安装&lt;/li&gt;
+  &lt;li&gt;单元测试&lt;/li&gt;
+  &lt;li&gt;使用样例&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;编译依赖&lt;/h1&gt;
+
+&lt;p&gt;sofa-pbrpc库的构建依赖boost-1.53.0、protobuf-2.4.1、snappy、zlib。&lt;/p&gt;
+
+&lt;h2 id=&quot;boost&quot;&gt;Boost&lt;/h2&gt;
+
+&lt;p&gt;下载地址：http://downloads.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz&lt;/p&gt;
+
+&lt;p&gt;编译：因为只需要boost的头文件，所以解压即可，无需编译。&lt;/p&gt;
+
+&lt;p&gt;配置：修改“depends.mk”，将BOOST_HEADER_DIR设置为解压得到的boost文件夹路径，譬如：&lt;/p&gt;
+
+&lt;p&gt;BOOST_HEADER_DIR=/home/users/qinzuoyan01/libs/boost_1_53_0&lt;/p&gt;
+
+&lt;h2 id=&quot;protobuf&quot;&gt;Protobuf&lt;/h2&gt;
+
+&lt;p&gt;下载地址：http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz&lt;/p&gt;
+
+&lt;p&gt;编译：&lt;/p&gt;
+
+&lt;p&gt;解压，cd到解压得到的文件夹下；
+./configure –prefix=$PWD/output
+make
+make install
+配置：修改“depends.mk”，将PROTOBUF_DIR设置为编译输出文件夹路径，譬如：&lt;/p&gt;
+
+&lt;p&gt;PROTOBUF_DIR=/home/users/qinzuoyan01/libs/protobuf-2.4.1/output&lt;/p&gt;
+
+&lt;h2 id=&quot;snappy&quot;&gt;Snappy&lt;/h2&gt;
+
+&lt;p&gt;下载地址：http://snappy.googlecode.com/files/snappy-1.1.1.tar.gz&lt;/p&gt;
+
+&lt;p&gt;编译：&lt;/p&gt;
+
+&lt;p&gt;解压，cd到解压得到的文件夹下；
+./configure –prefix=$PWD/output
+make
+make install
+配置：修改“depends.mk”，将SNAPPY_DIR设置为编译输出文件夹路径，譬如：&lt;/p&gt;
+
+&lt;p&gt;SNAPPY_DIR=/home/users/qinzuoyan01/libs/snappy-1.1.1/output&lt;/p&gt;
+
+&lt;h2 id=&quot;zlib&quot;&gt;Zlib&lt;/h2&gt;
+
+&lt;p&gt;如果你的系统库中已经安装zlib，请直接跳过。&lt;/p&gt;
+
+&lt;p&gt;下载地址：http://zlib.net/zlib-1.2.8.tar.gz&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;编译：&lt;/h1&gt;
+
+&lt;p&gt;解压，cd到解压得到的文件夹下；
+./configure –prefix=$PWD/output
+make
+make install
+配置：修改“depends.mk”，将ZLIB_DIR设置为编译输出文件夹路径，譬如：&lt;/p&gt;
+
+&lt;p&gt;ZLIB_DIR=/home/users/qinzuoyan01/libs/zlib-1.2.8/output
+编译&lt;/p&gt;
+
+&lt;p&gt;运行“make”进行编译。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;运行“make install”进行安装。&lt;/p&gt;
+
+&lt;p&gt;默认会安装到“./output”文件夹下，可通过修改“Makefile”文件中的“PREFIX”来设置安装路径。&lt;/p&gt;
+
+&lt;p&gt;安装的文件包括：&lt;/p&gt;
+
+&lt;p&gt;include/*
+lib/libsofa-pbrpc.a
+bin/sofa-pbrpc-client
+#  单元测试&lt;/p&gt;
+
+&lt;p&gt;进入单元测试文件夹“unit-test”。&lt;/p&gt;
+
+&lt;p&gt;依赖：单元测试需额外依赖gtest库，下载地址为 http://googletest.googlecode.com/files/gtest-1.7.0.zip ，解压即可，无需编译。然后修改文件“unit-test/depends.mk”，将GTEST_DIR设置为解压得到的gtest文件夹路径。&lt;/p&gt;
+
+&lt;p&gt;编译：运行“make”进行编译。&lt;/p&gt;
+
+&lt;p&gt;测试：运行“sh run_test.sh”执行测试。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;使用样例&lt;/h1&gt;
+
+&lt;p&gt;进入样例文件夹“sample”。&lt;/p&gt;
+
+&lt;p&gt;使用样例共有四个：echo/timeout_sample/compress_sample/mock_sample。&lt;/p&gt;
+
+&lt;p&gt;除了mock_sample，其他三个样例可直接进入文件夹运行“make”。&lt;/p&gt;
+
+&lt;p&gt;mock_sample需要指定gtest依赖，配置方式与“unit-test”相同。&lt;/p&gt;
+
+</description>
         <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
-        <link>https://zd-double.github.io//blog/2016/07/01/welcome-to-sofa-pbrpc.html</link>
-        <guid isPermaLink="true">https://zd-double.github.io//blog/2016/07/01/welcome-to-sofa-pbrpc.html</guid>
+        <link>https://zd-double.github.io/blog/2016/07/01/Installing.html</link>
+        <guid isPermaLink="true">https://zd-double.github.io/blog/2016/07/01/Installing.html</guid>
         
         
         <category>blog</category>
@@ -215,7 +329,7 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 &lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &quot;echo_service.pb.h&quot;   // service接口定义头文件
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;### 同步调用&lt;/p&gt;
+&lt;p&gt;###  同步调用&lt;/p&gt;
 
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -341,26 +455,12 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 回调函数的执行会分配到专门的回调线程中运行，可以通过设置RpcClientOptions的callback_thread_num来配置回调线程数；&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-        <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
-        <link>https://zd-double.github.io//blog/2016/07/01/quick-start.html</link>
-        <guid isPermaLink="true">https://zd-double.github.io//blog/2016/07/01/quick-start.html</guid>
+        <pubDate>Fri, 01 Jul 2016 20:50:39 +0800</pubDate>
+        <link>https://zd-double.github.io/blog/2016/07/01/quick-start.html</link>
+        <guid isPermaLink="true">https://zd-double.github.io/blog/2016/07/01/quick-start.html</guid>
         
         
         <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Benchmark</title>
-        <description>&lt;p&gt;欢迎来到sofa-pbrpc Benchmark页面！&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 01 Jul 2016 21:50:39 +0800</pubDate>
-        <link>https://zd-double.github.io//benchmark/2016/07/01/benchmark.html</link>
-        <guid isPermaLink="true">https://zd-double.github.io//benchmark/2016/07/01/benchmark.html</guid>
-        
-        
-        <category>benchmark</category>
         
       </item>
     
