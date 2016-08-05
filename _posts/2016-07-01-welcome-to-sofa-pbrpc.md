@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Welcome to sofa-pbrpc!"
-date:   2016-07-01 14:50:39
+title:  "欢迎使用sofa-pbrpc!"
+date:   2016-07-01 8:50:39
 categories: blog
 ---
 欢迎来到sofa-pbrpc的中文Wiki页面！
-
 
 sofa-pbrpc(sofa protobuf-based rpc)是使用Boost::Asio实现的基于Google Protocol Buffers RPC框架的网络通信库，在百度公司各部门得到广泛使用。
 

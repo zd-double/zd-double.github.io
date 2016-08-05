@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>Quick Start - sofa-pbrpc</title>
+        <title>快速使用 - sofa-pbrpc</title>
         <meta name="author" content="sofa-pbrpc" />
-        <meta name="description" content="Quick Start" />
-        <meta name="keywords" content="Quick Start, sofa-pbrpc, blog" />
+        <meta name="description" content="快速使用" />
+        <meta name="keywords" content="快速使用, sofa-pbrpc, blog" />
 
         <meta content="0" property="fb:app_id">
         <meta content="sofa-pbrpc" property="og:site_name">
         
-          <meta content="Quick Start" property="og:title">
+          <meta content="快速使用" property="og:title">
         
         
           <meta content="article" property="og:type">
@@ -26,7 +26,7 @@
           <meta content="https://zd-double.github.io/blog/2016/07/01/quick-start.html" property="og:url">
         
         
-          <meta content="2016-07-01T20:50:39+08:00" property="article:published_time">
+          <meta content="2016-07-01T19:50:39+08:00" property="article:published_time">
           <meta content="https://zd-double.github.io/about/" property="article:author">
         
         
@@ -44,7 +44,7 @@
         <meta name="twitter:site" content="@\#">
         <meta name="twitter:creator" content="@\#">
         
-          <meta name="twitter:title" content="Quick Start">
+          <meta name="twitter:title" content="快速使用">
         
         
           <meta name="twitter:url" content="https://zd-double.github.io/blog/2016/07/01/quick-start.html">
@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
-      <h2 class="blog-title-pro">Quick Start</h2>
+      <h2 class="blog-title-pro">快速使用</h2>
       <p class="info">
       
       <span class="time">01 Jul 2016</span>
@@ -193,29 +193,22 @@
             <div class="col-md-9 col-xs-12 full">
                 <div class="post-content well">
 <article class="content">
-    <div class="post"><h1 id="section">快速使用三部曲</h1>
+    <div class="post"><h1>快速使用三部曲</h1>
 
 <p>使用sofa-pbrpc只需要三步：</p>
 
 <ul>
-  <li>
-    <p>定义通讯协议</p>
-  </li>
-  <li>
-    <p>实现Server</p>
-  </li>
-  <li>
-    <p>实现Client</p>
-  </li>
+<li><p>定义通讯协议</p></li>
+<li><p>实现Server</p></li>
+<li><p>实现Client</p></li>
 </ul>
 
 <p>样例代码参见“sample/echo”。</p>
 
-<h2 id="section-1">定义通讯协议</h2>
+<h2>定义通讯协议</h2>
 
 <p>定义协议只需要编写一个proto文件即可。范例：echo_service.proto</p>
-
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">package</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">package</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">;</span>
 <span class="n">option</span> <span class="n">cc_generic_services</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 
 <span class="c1">// 定义请求消息
@@ -231,29 +224,25 @@
 </span><span class="n">service</span> <span class="n">EchoServer</span> <span class="p">{</span>
     <span class="n">rpc</span> <span class="n">Echo</span><span class="p">(</span><span class="n">EchoRequest</span><span class="p">)</span> <span class="n">returns</span><span class="p">(</span><span class="n">EchoResponse</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-<p>使用protoc编译’echo_service.proto’，生成接口文件’echo_service.pb.h’和’echo_service.pb.cc’。</p>
+</code></pre></div>
+<p>使用protoc编译&#39;echo<em>service.proto&#39;，生成接口文件&#39;echo</em>service.pb.h&#39;和&#39;echo_service.pb.cc&#39;。</p>
 
 <blockquote>
-  <p><strong>注意：</strong></p>
+<p><strong>注意：</strong></p>
 
-  <p>package会被映射到C++中的namespace，为了避免冲突建议使用package；
-需要设置“cc_generic_services”，以通知protoc工具生成RPC框架代码；
+<p>package会被映射到C++中的namespace，为了避免冲突建议使用package；
+需要设置“cc<em>generic</em>services”，以通知protoc工具生成RPC框架代码；
 这里EchoRequest和EchoResponse的成员完全相同，在实际应用中可以设置不同的成员；</p>
 </blockquote>
 
-<h2 id="server">实现Server</h2>
+<h2>实现Server</h2>
 
-<h3 id="section-2">头文件</h3>
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
+<h3>头文件</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
 </span> <span class="cp">#include "echo_service.pb.h"   // service接口定义头文件
-</span> <span class="err">```</span>
-
-<span class="cp">### 实现服务
-</span><span class="err">```</span><span class="n">c</span><span class="o">++</span>
-<span class="k">class</span> <span class="nc">EchoServerImpl</span> <span class="o">:</span> <span class="k">public</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer</span>
+</span></code></pre></div>
+<h3>实现服务</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">EchoServerImpl</span> <span class="o">:</span> <span class="k">public</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="n">EchoServerImpl</span><span class="p">()</span> <span class="p">{}</span>
@@ -273,21 +262,19 @@
         <span class="n">done</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div>
 <blockquote>
-  <p><strong>注意：</strong>
+<p><strong>注意：</strong>
 服务完成后必须调用done-&gt;Run()，通知RPC系统服务完成，触发发送Response；
 在调了done-&gt;Run()之后，Echo的所有四个参数都不再能访问；
 done-Run()可以分派到其他线程中执行，以实现了真正的异步处理；
 注册和启动服务</p>
 </blockquote>
-
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// 设置日志级别
 </span>    <span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">);</span>
-    
+
     <span class="c1">// 定义RpcServer
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcServerOptions</span> <span class="n">options</span><span class="p">;</span>
     <span class="n">options</span><span class="p">.</span><span class="n">work_thread_num</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
@@ -314,24 +301,20 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 
     <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="client">实现Client</h2>
+</code></pre></div>
+<h2>实现Client</h2>
 
 <p>Client支持同步和异步两种调用方式：</p>
 
 <p>同步调用时，调用线程会被阻塞，直到收到回复或者超时；
 异步调用时，调用线程不会被阻塞，收到回复或者超时会调用用户提供的回调函数；</p>
 
-<h3 id="section-3">头文件</h3>
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
+<h3>头文件</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="cp">#include &lt;sofa/pbrpc/pbrpc.h&gt;  // sofa-pbrpc头文件
 </span> <span class="cp">#include "echo_service.pb.h"   // service接口定义头文件
-</span></code></pre>
-</div>
-<p>###  同步调用</p>
-
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></code></pre></div>
+<h3>同步调用</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">NOTICE</span><span class="p">);</span>
 
@@ -344,22 +327,22 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 
     <span class="c1">// 定义RpcChannel对象，代表一个消息通道，需传入Server端服务地址
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcChannel</span> <span class="n">rpc_channel</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_client</span><span class="p">,</span> <span class="s">"127.0.0.1:12321"</span><span class="p">);</span>
- 
+
     <span class="c1">// 定义EchoServer服务的桩对象EchoServer_Stub，使用上面定义的消息通道传输数据
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoServer_Stub</span> <span class="n">stub</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rpc_channel</span><span class="p">);</span>
- 
+
     <span class="c1">// 定义和填充调用方法的请求消息
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span> <span class="n">request</span><span class="p">;</span>
     <span class="n">request</span><span class="p">.</span><span class="n">set_message</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
- 
+
     <span class="c1">// 定义方法的回应消息，会在调用返回后被填充
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span> <span class="n">response</span><span class="p">;</span>
- 
+
     <span class="c1">// 定义RpcController对象，用于控制本次调用
 </span>    <span class="c1">// 可以设置超时时间、压缩方式等；默认超时时间为10秒，默认压缩方式为无压缩
 </span>    <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span> <span class="n">controller</span><span class="p">;</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">SetTimeout</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
- 
+
     <span class="c1">// 发起调用，最后一个参数为NULL表示为同步调用
 </span>    <span class="n">stub</span><span class="p">.</span><span class="n">Echo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">controller</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">request</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">response</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 
@@ -371,12 +354,9 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 
     <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="section-4">异步调用</h3>
-
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">// 定义回调函数
+</code></pre></div>
+<h3>异步调用</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// 定义回调函数
 </span><span class="kt">void</span> <span class="nf">EchoCallback</span><span class="p">(</span><span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span> <span class="n">cntl</span><span class="p">,</span>
         <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoRequest</span><span class="o">*</span> <span class="n">request</span><span class="p">,</span>
         <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">test</span><span class="o">::</span><span class="n">EchoResponse</span><span class="o">*</span> <span class="n">response</span><span class="p">,</span>
@@ -445,14 +425,12 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 
     <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <blockquote>
-  <p><strong>注意：</strong></p>
+<p><strong>注意：</strong></p>
 
-  <p>异步调用传入的controller、request、response参数，在回调函数执行之前需一直保持有效；
-回调函数的执行会分配到专门的回调线程中运行，可以通过设置RpcClientOptions的callback_thread_num来配置回调线程数；</p>
+<p>异步调用传入的controller、request、response参数，在回调函数执行之前需一直保持有效；
+回调函数的执行会分配到专门的回调线程中运行，可以通过设置RpcClientOptions的callback<em>thread</em>num来配置回调线程数；</p>
 </blockquote>
 </div>
     <hr />
@@ -490,7 +468,31 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
                 <ul>
                 
                 <li class="relatedPost">
-                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc!</a>
+                    <a href="https://zd-double.github.io/blog/2016/08/01/advanced.html">高级用法</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/Installing.html">安装</a>
                     
                         <small>(Categories: <a href="/category/blog">blog</a>)</small>
                     
@@ -507,20 +509,13 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
             
                 
                 <li class="relatedPost">
-                    <a href="https://zd-double.github.io/blog/2016/07/01/Installing.html">Installing</a>
+                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">欢迎使用sofa-pbrpc!</a>
                     
                         <small>(Categories: <a href="/category/blog">blog</a>)</small>
                     
                 </li>
                 
                 
-            
-        
-    
-
-    
-    
-        
             
         
     
@@ -532,8 +527,10 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
 
 <div class="PageNavigation">
   
+    <a class="prev pull-left" href="/blog/2016/07/01/Installing.html">&laquo; 安装</a>
   
-    <a class="next pull-right" href="/blog/2016/07/01/Installing.html">Installing &raquo;</a>
+  
+    <a class="next pull-right" href="/blog/2016/08/01/advanced.html">高级用法 &raquo;</a>
   
 </div>
 
@@ -544,8 +541,8 @@ done-Run()可以分派到其他线程中执行，以实现了真正的异步处�
         /* <![CDATA[ */
 
         var disqus_shortname = "zddouble";
-        var disqus_identifier = "https://zd-double.github.io_Quick Start";
-        var disqus_title = "Quick Start";
+        var disqus_identifier = "https://zd-double.github.io_快速使用";
+        var disqus_title = "快速使用";
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

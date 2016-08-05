@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>高级用法 - sofa-pbrpc</title>
+        <meta name="author" content="sofa-pbrpc" />
+        <meta name="description" content="高级用法" />
+        <meta name="keywords" content="高级用法, sofa-pbrpc, blog" />
+
+        <meta content="0" property="fb:app_id">
+        <meta content="sofa-pbrpc" property="og:site_name">
+        
+          <meta content="高级用法" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="Sofa-pbrpc Blog" property="og:description">
+        
+        
+          <meta content="https://zd-double.github.io/blog/2016/08/01/advanced.html" property="og:url">
+        
+        
+          <meta content="2016-08-01T21:50:39+08:00" property="article:published_time">
+          <meta content="https://zd-double.github.io/about/" property="article:author">
+        
+        
+          <meta content="http://aboutashu.com/static/img/logo-high-resolution.png" property="og:image">
+        
+        
+          
+          <meta content="blog" property="article:section">
+          
+        
+        
+          
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@\#">
+        <meta name="twitter:creator" content="@\#">
+        
+          <meta name="twitter:title" content="高级用法">
+        
+        
+          <meta name="twitter:url" content="https://zd-double.github.io/blog/2016/08/01/advanced.html">
+        
+        
+          <meta name="twitter:description" content="Sofa-pbrpc Blog">
+        
+        
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <!-- FontAwesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/74dfc6cf47.css">
+
+        <!-- Core BootStrap CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Material Design CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/bootstrap-material-design.min.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/syntax.css">
+
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/thickbox.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/main.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/projects.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72862926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </head>
+
+    <body class="home overflow-hidden">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header-panel shadow-z-2">
+    <div class="container">
+    <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+      <div class="row-picture">
+        <img id="about" class="logo-img" src="http://aboutashu.com/hcz-jekyll-blog/static/img/avatar.png" height="75px" width="75px">
+      </div>
+      <div class="row-details">
+      <h4 class="list-group-item-heading">sofa-pbrpc</h4>
+      <p class="list-group-item-text">A light-weight RPC implement of google protobuf RPC framework.</p>
+      <div class="social-icons">
+	
+        <a class="icon" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-skype"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-stack-exchange"></i></a>
+    
+</div>
+      </div>
+        <div class="navbar-header pull-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-2x fa-bars"></i>
+            </button>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+      <h2 class="blog-title-pro">高级用法</h2>
+      <p class="info">
+      
+      <span class="time">01 Aug 2016</span>
+      
+      
+    <span class="categories">
+        &raquo; <a href="/category/blog">blog</a>
+    </span>
+    
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="container main outer">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                    <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary post">
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item advanced.html"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  advanced.html"><a href="/projects/"><i class="fa fa-desktop"></i> Projects</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  advanced.html"><a href="/benchmark/"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  advanced.html"><a href="https://github.com/zd-double/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  advanced.html"><a href="/documents/"><i class="fa fa-feed"></i> Documents</a></li>
+
+</ul>
+    </div>
+    </nav>
+
+            </div> <!-- end /.col-md-3 -->
+
+            <div class="col-md-9 col-xs-12 full">
+                <div class="post-content well">
+<article class="content">
+    <div class="post"><p>本文档包括：</p>
+
+<ul>
+<li>超时控制</li>
+<li>压缩控制</li>
+<li>带宽限制</li>
+<li>日志打印</li>
+<li>RpcController使用</li>
+<li>RPC失败处理</li>
+<li>Server/Client配置参数</li>
+<li>多Server负载均衡与容错</li>
+<li>辅助开发工具类</li>
+<li>Mock测试</li>
+<li>sofa-pbrpc-client工具</li>
+<li>统计与监控</li>
+<li>HTTP支持</li>
+<li>Web监控</li>
+</ul>
+
+<h1>超时控制</h1>
+
+<p>sofa-pbrpc-clienta-pbrpc支持三个级别的超时控制，按照生效的优先级由高到低依次为：</p>
+
+<p>Request超时：在RpcController中使用SetTimeout()函数设置超时时间（毫秒），该超时只对本次请求有效；如果不设置，则使用“Method超时”或者“Service超时”；
+Method超时：在proto文件中指定method的超时时间（毫秒），该超时对该方法的所有请求有效；如果不设置，则使用Service超时；
+Service超时：在proto文件中指定service的超时时间（毫秒），该超时对该服务的所有方法的所有请求都有效；如果不设置，则使用默认值（10000毫秒）。
+在proto文件中指定“method超时”和“Service超时”的样例如下：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">import</span> <span class="s">"sofa/pbrpc/rpc_option.proto"</span><span class="p">;</span>
+
+<span class="n">package</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">;</span>
+
+<span class="n">option</span> <span class="n">cc_generic_services</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+<span class="n">message</span> <span class="n">SleepRequest</span> <span class="p">{</span>
+        <span class="n">required</span> <span class="n">int32</span> <span class="n">sleep_time</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// in seconds
+</span><span class="p">}</span>
+
+<span class="n">message</span> <span class="n">SleepResponse</span> <span class="p">{</span>
+        <span class="n">required</span> <span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">service</span> <span class="n">SleepServer</span> <span class="p">{</span>
+        <span class="c1">// The service timeout is 2 seconds.
+</span>        <span class="n">option</span> <span class="p">(</span><span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">service_timeout</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+
+        <span class="n">rpc</span> <span class="n">SleepWithServiceTimeout</span><span class="p">(</span><span class="n">SleepRequest</span><span class="p">)</span> <span class="n">returns</span><span class="p">(</span><span class="n">SleepResponse</span><span class="p">);</span>
+
+        <span class="c1">// The method timeout is 4 seconds.
+</span>        <span class="n">rpc</span> <span class="nf">SleepWithMethodTimeout</span><span class="p">(</span><span class="n">SleepRequest</span><span class="p">)</span> <span class="n">returns</span><span class="p">(</span><span class="n">SleepResponse</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">option</span> <span class="p">(</span><span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">method_timeout</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4000</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>注意：</strong></p>
+
+<p>如果在proto中指定超时，需要import &quot;sofa/pbrpc/rpc<em>option.proto&quot;，并且编译proto文件时还需要添加protobuf头文件路径到proto</em>path中，具体可参考样例“sample/timeout_sample”；</p>
+</blockquote>
+
+<p>RpcController中设置超时时间的接口如下：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// Set expect timeout in milli-seconds of the call.  If timeout is not set
+// or set no more than 0, actual timeout will be taken from proto options.
+</span><span class="kt">void</span> <span class="n">SetTimeout</span><span class="p">(</span><span class="n">int64</span> <span class="n">timeout_in_ms</span><span class="p">);</span>
+</code></pre></div>
+<h1>压缩控制</h1>
+
+<p>sofa-pbrpc支持两个级别的数据压缩控制，按照生效优先级由高到低依次为：</p>
+
+<p>Request压缩控制：在RpcController中使用SetRequestCompressType()和SetResponseCompressType()函数设置请求和回复的数据压缩类型，该设置只对本次请求有效；如果不设置，则使用“Method压缩控制”；
+Method压缩控制：在proto文件中使用扩展option来指定method的Request或者Response的压缩类型，该超时对该方法的所有请求有效；如果不设置，则使用默认值（不压缩）；
+目前支持的压缩类型包括：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">None</span>
+<span class="n">Gzip</span>
+<span class="n">Zlib</span>
+<span class="n">Snappy</span>
+<span class="n">LZ4</span>
+</code></pre></div>
+<p>在proto文件中指定压缩类型的样例如下：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">import</span> <span class="s">"sofa/pbrpc/rpc_option.proto"</span><span class="p">;</span>
+
+<span class="n">package</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">;</span>
+
+<span class="n">option</span> <span class="n">cc_generic_services</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+<span class="n">message</span> <span class="n">EchoRequest</span> <span class="p">{</span>
+        <span class="n">required</span> <span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">message</span> <span class="n">EchoResponse</span> <span class="p">{</span>
+        <span class="n">required</span> <span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">service</span> <span class="n">EchoServer</span> <span class="p">{</span>
+        <span class="n">rpc</span> <span class="n">Echo</span><span class="p">(</span><span class="n">EchoRequest</span><span class="p">)</span> <span class="n">returns</span><span class="p">(</span><span class="n">EchoResponse</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">option</span> <span class="p">(</span><span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">request_compress_type</span><span class="p">)</span> <span class="o">=</span> <span class="n">CompressTypeGzip</span><span class="p">;</span>
+                <span class="n">option</span> <span class="p">(</span><span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">response_compress_type</span><span class="p">)</span> <span class="o">=</span> <span class="n">CompressTypeGzip</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>RpcController中设置压缩类型的接口如下：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="c1">// Set compress type of the request message.
+// Supported types:
+//   CompressTypeNone
+//   CompressTypeGzip
+//   CompressTypeZlib
+//   CompressTypeSnappy
+//   CompressTypeLZ4
+</span><span class="kt">void</span> <span class="n">SetRequestCompressType</span><span class="p">(</span><span class="n">CompressType</span> <span class="n">compress_type</span><span class="p">);</span>
+
+<span class="c1">// Set expected compress type of the response message.
+// Supported types:
+//   CompressTypeNone
+//   CompressTypeGzip
+//   CompressTypeZlib
+//   CompressTypeSnappy
+//   CompressTypeLZ4
+</span><span class="kt">void</span> <span class="n">SetResponseCompressType</span><span class="p">(</span><span class="n">CompressType</span> <span class="n">compress_type</span><span class="p">);</span>
+</code></pre></div>
+<h1>带宽限制</h1>
+
+<p>sofa-pbrpc支持在RpcServer和RpcClient级别在Options中指定参数就可以控制网络带宽限制，包括“出带宽”、“入带宽”，使流量控制对应用层透明，简化应用层的工作。</p>
+
+<p>在RpcServerOptions和RpcClientOptions中可以分别指定Server端和Client端的最大入带宽“max<em>throughput</em>in”和最大出带宽“max<em>throughput</em>out”，参数用法与语义如下（默认为-1，表示不控制）：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+<span class="c1">// Network throughput limit.
+// The network bandwidth is shared by all connections:
+// * busy connections get more bandwidth.
+// * the total bandwidth of all connections will not exceed the limit.
+</span><span class="kt">int</span> <span class="n">max_throughput_in</span><span class="p">;</span>       <span class="c1">// max network in throughput for all connections.
+</span>                             <span class="c1">// in MB/s, should &gt;= -1, -1 means no limit, default -1.
+</span><span class="kt">int</span> <span class="n">max_throughput_out</span><span class="p">;</span>      <span class="c1">// max network out throughput for all connections.
+</span>                             <span class="c1">// in MB/s, should &gt;= -1, -1 means no limit, default -1.
+</span></code></pre></div>
+<p>对于client端，如果限定了带宽流量，同时请求发送速度过快，来不及发出去的请求就会积压在Request Pending Buffer中。用户可以在Options指定该buffer的大小，如果buffer满了，请求就会立即返回RPC<em>ERROR</em>SEND<em>BUFFER</em>FULL的错误，用户可以根据需要进行处理，譬如减缓发送速度。在 RpcServerOptions 和 RpcClientOptions 中都可以指定“max<em>pending</em>buffer_size”：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">max_pending_buffer_size</span><span class="p">;</span> <span class="c1">// max size of pending buffer for one connection.
+</span>                             <span class="c1">// in MB, should &gt;= 0, 0 means no buffer, default 2.
+</span></code></pre></div>
+<p>另外需注意：流量控制依据的是用户业务数据的数据量，不包含socket底层的包头协议数据的数据量，所以一般实际出入的数据量会比指定的略大。</p>
+
+<p>以下是某实际系统中的网络流量监控图（带宽限制设置为15MB/s）： </p>
+
+<p><img src="/static/img/sofa-pbrpc-flow-control.jpg" alt="Aaron Swartz"></p>
+
+<h1>日志打印</h1>
+
+<p>sofa-pbrpc提供日志打印函数SLOG()，将日志打印到标准错误输出，使用方式类似于printf()。</p>
+
+<p>日志级别由高到低为：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">FATAL</span>
+<span class="n">ERROR</span>
+<span class="n">WARNING</span>
+<span class="n">INFO</span>
+<span class="n">TRACE</span>
+<span class="n">DEBUG</span>
+</code></pre></div>
+<p>通过打印级别控制日志输出，只会输出高于或者等于打印级别的日志，默认级别为ERROR。</p>
+
+<p>用户可通过SOFA<em>PBRPC</em>SET<em>LOG</em>LEVEL()设置打印级别，譬如设置为INFO：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">SOFA_PBRPC_SET_LOG_LEVEL</span><span class="p">(</span><span class="n">INFO</span><span class="p">);</span>
+</code></pre></div>
+<p>日志使用样例：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">SLOG</span><span class="p">(</span><span class="n">ERROR</span><span class="p">,</span> <span class="s">"error message: %s"</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+</code></pre></div>
+<h1>RpcController使用</h1>
+
+<p>RpcController用于控制单次请求的调用过程。</p>
+
+<p>在Client端调用方法时，都需要传入一个RpcController，其作用是：</p>
+
+<ul>
+<li>在发送请求前：控制请求的超时时间，设置Request或者Response的压缩类型；</li>
+<li>在请求完成后：获取本地和远程的网络地址，获取（成功/失败）状态，如果失败可获取错误信息，检查请求是否已发送至远端；
+在Server端服务实现中，外层也会传入一个RpcController，其作用是：</li>
+</ul>
+
+<p>获取本地和远程的网络地址；
+如果服务失败，设置失败标志和错误信息；
+使用RpcController时需注意如下几点：</p>
+
+<ul>
+<li>RpcController用于控制单次请求的调用过程，每次RPC请求都需要创建一个RpcController，在本次请求完成前，其不得释放或者重用；</li>
+<li>请求完成后，该RpcController可以使用Reset()方法恢复初始状态以进行重用；</li>
+<li>RpcController的不同接口有不同的使用时间范围，只有在规定的时间范围内使用，接口才能返回正确结果，否则行为是不确定的;</li>
+</ul>
+
+<h1>RPC失败处理</h1>
+
+<p>RPC请求失败时，RpcController的Failed()接口会返回true，同时错误信息可以从ErrorCode()和ErrorText()中获得。</p>
+
+<p>错误的原因主要有两大类：</p>
+
+<ul>
+<li>RPC类的错误：包括缓冲区满、请求没有发出去（网络错误）、请求发出去了但没有在规定时间内得到回复（超时）；其中网络错误的原因又有多种，譬如连接不上、网络异常、请求的服务不存在等。</li>
+<li>服务执行本身的错误（非RPC错误）：Server端在服务执行过程中遇到了错误，使用SetFailed(reason)接口设置错误标识和失败原因；Client端的RpcController行为如下：
+
+<ul>
+<li>Failed()会返回true；</li>
+<li>ErrorCode()返回的错误码是RPC<em>ERROR</em>FROM<em>USER（错误码的更多定义可参见文件&quot;sofa/pbrpc/rpc</em>error_code.h&quot;）；</li>
+<li>ErrorText()返回的错误描述就是Server端通过SetFailed()传入的reason；</li>
+</ul></li>
+</ul>
+
+<p>Server/Client配置参数</p>
+
+<h1>Options</h1>
+
+<h2>RpcServerOptions</h2>
+
+<p><img src="/static/img/sofa-pbrpc-server-options.png" alt="主页示例:"></p>
+
+<h2>RpcClientOptions</h2>
+
+<p><img src="/static/img/sofa-pbrpc-server-options.png" alt="主页示例:"></p>
+
+<h1>多Server负载均衡与容错</h1>
+
+<p>在创建RpcChannel时，可以指定多个功能对等的Server地址。在调用服务时，会根据负载均衡策略选择合适的Server发送请求，并自动进行容错和探活处理。</p>
+
+<p>RpcChannel支持点对多点的构造函数：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+    <span class="c1">// Create multiple server points by server address list.
+</span>    <span class="c1">// The "rpc_client" is owned by the caller.
+</span>    <span class="n">RpcChannel</span><span class="p">(</span><span class="n">RpcClient</span><span class="o">*</span> <span class="n">rpc_client</span><span class="p">,</span>
+               <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">address_list</span><span class="p">,</span>
+               <span class="k">const</span> <span class="n">RpcChannelOptions</span><span class="o">&amp;</span> <span class="n">options</span> <span class="o">=</span> <span class="n">RpcChannelOptions</span><span class="p">());</span>
+
+    <span class="c1">// Create multiple server points by address provider.
+</span>    <span class="c1">// The "rpc_client" is owned by the caller.
+</span>    <span class="c1">// The "address_provider" is owned by the caller.
+</span>    <span class="n">RpcChannel</span><span class="p">(</span><span class="n">RpcClient</span><span class="o">*</span> <span class="n">rpc_client</span><span class="p">,</span>
+               <span class="n">AddressProvider</span><span class="o">*</span> <span class="n">address_provider</span><span class="p">,</span>
+               <span class="k">const</span> <span class="n">RpcChannelOptions</span><span class="o">&amp;</span> <span class="n">options</span> <span class="o">=</span> <span class="n">RpcChannelOptions</span><span class="p">());</span>
+
+</code></pre></div>
+<p>在上面第二个函数中，用户可以提供一个AddressProvider，支持动态增加或者删除server地址。</p>
+
+<p>负载均衡策略：</p>
+
+<ul>
+<li>对于每个单点channel，记录其“未完成的调用数（Not Done Calling Count）”，数量越少，表示负载越轻；</li>
+<li>下次选择server的时候，优先选择“未完成的调用数”最少的机器；</li>
+<li>在“未完成的调用数”相同的情况下，优先选择“最近最长时间未使用的机器”。</li>
+</ul>
+
+<p>容错与探活策略：</p>
+
+<ul>
+<li>每个server内置一个BuiltinService，提供Health()方法用于探活；</li>
+<li>在Client端维护两个队列：“活动队列”和“待探活队列”；</li>
+<li>RPC调用选择server的时候，优先从“活动队列”中选择；</li>
+<li>一旦某个server的RPC调用出错，则将其加入“待探活队列”；</li>
+<li>Client周期性地（每隔5秒）向“待探活队列”中的机器发送探活请求，如果探活成功，则重新放回到“活动队列”。</li>
+</ul>
+
+<p>具体策略实现可以参考src/sofa/pbrpc/dynamic<em>rpc</em>channel_impl.cc。</p>
+
+<p>使用样例代码可以参考test/perf<em>test/client</em>multi_server.cc。</p>
+
+<p>AddressProvider的高级使用可以参考sample/multi<em>server</em>sample。</p>
+
+<h1>辅助开发工具类</h1>
+
+<p>sofa-pbrpc提供了一些方便用户开发的工具类，包括：
+<img src="/static/img/sofa-pbrpc-dev-tools.png" alt="主页示例:"></p>
+
+<p>具体使用方法请直接参考头文件。</p>
+
+<h1>Mock测试</h1>
+
+<p>sofa-pbrpc提供了Mock测试支持，便于用户编写测试程序。</p>
+
+<p>Mock功能的接口主要参考&quot;sofa/pbrpc/mock<em>test</em>helper.h&quot;文件，使用样例可参考&quot;sample/mock_sample/&quot;。</p>
+
+<p>主要提供了五个宏：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+<span class="c1">// Enable or disable the mock feature.  Default disabled.
+// The mock channel and mock methods will take effect iff mock enabled.
+</span><span class="cp">#define SOFA_PBRPC_ENABLE_MOCK() ::sofa::pbrpc::enable_mock()
+#define SOFA_PBRPC_DISABLE_MOCK() ::sofa::pbrpc::disable_mock()
+</span>
+
+<span class="c1">// If you create a channel with address of SOFA_PBRPC_MOCK_CHANNEL_ADDRESS, then the channel is a mock
+// channel.  The mock channel will not create real socket connection, but just uses mock methods.
+</span><span class="cp">#define SOFA_PBRPC_MOCK_CHANNEL_ADDRESS "/mock/"
+</span>
+
+<span class="c1">// All mock method implements should use this function signature.
+</span><span class="k">typedef</span> <span class="n">ExtClosure</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
+<span class="o">::</span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">RpcController</span><span class="o">*</span><span class="p">,</span>
+<span class="k">const</span> <span class="o">::</span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Message</span><span class="o">*</span><span class="p">,</span>
+<span class="o">::</span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Message</span><span class="o">*</span><span class="p">,</span>
+<span class="o">::</span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Closure</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">MockMethodHookFunction</span><span class="p">;</span>
+
+<span class="c1">// Register a mock method implement.  If mock enabled, all channels will prefer to call mock
+// method first. If the corresponding mock method is not registered, then call the real method.
+//
+// "method_name" is the full name of the method to be mocked, should be a c-style string.
+// "mock_method" is the mock method hook function, should be type of "MockMethodHookFunction*".
+//
+// For example:
+//     MockMethodHookFunction* mock_method = sofa::pbrpc::NewPermanentExtClosure(&amp;MockEcho);
+//     SOFA_PBRPC_REGISTER_MOCK_METHOD("sofa.pbrpc.test.EchoServer.Echo", mock_method);
+</span><span class="cp">#define SOFA_PBRPC_REGISTER_MOCK_METHOD(method_name, mock_method) \
+::sofa::pbrpc::MockTestHelper::GlobalInstance()-&gt;RegisterMockMethod(method_name, (mock_method))
+</span>
+
+<span class="c1">// Clear all registered mock methods.  This will not delete the cleared hook functions, which
+// are take ownership by user.
+</span><span class="cp">#define SOFA_PBRPC_CLEAR_MOCK_METHOD() \
+::sofa::pbrpc::MockTestHelper::GlobalInstance()-&gt;ClearMockMethod()#
+</span></code></pre></div>
+<h1>sofa-pbrpc-client工具</h1>
+
+<p>sofa-pbrpc提供了一个客户端工具sofa-pbrpc-client（位于&quot;bin/&quot;文件夹下），用于查询server状态、获取服务列表及proto描述、获取服务调用统计、构建文本快速发送rpc请求等。</p>
+
+<p>具体功能：</p>
+
+<ul>
+<li>查询server的健康状况(health)、配置参数(option)、负载情况(status)；</li>
+<li>查询server对外提供的服务列表(list)；</li>
+<li>获取服务的protobuf描述信息(desc)；</li>
+<li>获取服务调用统计(stat)，包括处理请求数、平均处理时间、最大处理时间等；</li>
+<li>使用text格式的请求数据，以通用的方式向server的某个method发送rpc请求调用(call)；
+使用帮助：</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+<span class="n">Usage</span><span class="o">:</span> <span class="n">sofa</span><span class="o">-</span><span class="n">pbrpc</span><span class="o">-</span><span class="n">client</span> <span class="o">&lt;</span><span class="n">server</span><span class="o">-</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">sub</span><span class="o">-</span><span class="n">command</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+
+<span class="n">Available</span> <span class="n">subcommands</span><span class="o">:</span>
+   <span class="n">help</span>
+           <span class="n">Print</span> <span class="k">this</span> <span class="n">usage</span> <span class="n">help</span><span class="p">.</span>
+
+   <span class="n">health</span>  
+           <span class="n">Check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">server</span> <span class="n">is</span> <span class="n">healthy</span><span class="p">.</span>
+
+   <span class="n">status</span>  
+           <span class="n">Get</span> <span class="n">status</span> <span class="n">of</span> <span class="n">the</span> <span class="n">server</span><span class="p">.</span>
+
+   <span class="n">option</span>  
+           <span class="n">Get</span> <span class="n">RpcServerOptions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">server</span><span class="p">.</span>
+
+   <span class="n">list</span>    
+           <span class="n">List</span> <span class="n">all</span> <span class="n">services</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">the</span> <span class="n">server</span><span class="p">.</span>
+
+   <span class="n">desc</span>    <span class="o">&lt;</span><span class="n">protobuf</span><span class="o">-</span><span class="n">type</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+           <span class="n">Get</span> <span class="n">descriptor</span> <span class="n">of</span> <span class="n">a</span> <span class="n">protobuf</span> <span class="n">type</span> <span class="p">(</span><span class="n">service</span><span class="o">/</span><span class="n">message</span><span class="o">/</span><span class="k">enum</span><span class="p">).</span>
+
+   <span class="n">call</span>    <span class="o">&lt;</span><span class="n">method</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">request</span><span class="o">-</span><span class="n">message</span><span class="o">-</span><span class="n">text</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">timeout</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">ms</span><span class="p">]</span>
+           <span class="n">Call</span> <span class="n">a</span> <span class="n">method</span> <span class="k">using</span> <span class="n">the</span> <span class="n">text</span> <span class="n">format</span> <span class="n">of</span> <span class="n">request</span> <span class="n">message</span><span class="p">.</span>
+           <span class="n">The</span> <span class="s">"timeout-in-ms"</span> <span class="n">is</span> <span class="n">optional</span><span class="p">,</span> <span class="k">default</span> <span class="n">is</span> <span class="mi">3000</span> <span class="n">milli</span><span class="o">-</span><span class="n">seconds</span><span class="p">.</span>
+
+   <span class="n">stat</span>    <span class="p">[</span><span class="n">service</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="n">period</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">seconds</span><span class="p">]</span>
+           <span class="n">Get</span> <span class="n">the</span> <span class="n">service</span> <span class="n">statistics</span> <span class="n">in</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">period</span> <span class="n">of</span> <span class="n">seconds</span><span class="p">.</span>
+           <span class="n">The</span> <span class="s">"service-full-name"</span> <span class="n">is</span> <span class="n">optional</span><span class="p">,</span> <span class="k">default</span> <span class="n">is</span> <span class="s">"all"</span><span class="p">.</span>
+           <span class="n">The</span> <span class="s">"period-in-seconds"</span> <span class="n">is</span> <span class="n">optional</span><span class="p">,</span> <span class="k">default</span> <span class="n">is</span> <span class="mi">60</span> <span class="n">seconds</span><span class="p">.</span>
+</code></pre></div>
+<blockquote>
+<p><strong>使用注意：</strong></p>
+
+<ul>
+<li>health、status、option、stat命令要求server端配置满足：disable<em>builtin</em>service = false；</li>
+<li>list、desc、call命令要求server端配置满足：disable<em>builtin</em>service = false &amp;&amp; disable<em>list</em>service = false；</li>
+<li>使用&quot;call&quot;命令发起rpc调用时，用户需要按照protobuf的text格式构造Request数据，其使用google.protobuf.TextFormat进行序列化和反序列化。返回的Response数据也使用text格式打印出来。实际上，text格式也就是message-&gt;DebugString()打印出来的格式。如果字符串中包含回车，在作为命令行参数时建议使用单引号括起来。实现上，sofa-pbrpc-client首先获取Server端服务的描述信息，然后通过反射的方式构建请求数据，发送rpc请求。这个功能对调试很有帮助，另外这个思路也可以用来实现http代理。</li>
+</ul>
+</blockquote>
+
+<p>使用样例：
+向监听地址为127.0.0.1:12321的server发送rpc调用&quot;sofa.pbrpc.test.EchoServer.Echo&quot;</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++">
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">sofa</span><span class="o">-</span><span class="n">pbrpc</span><span class="o">-</span><span class="n">client</span> <span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">12321</span> <span class="n">call</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">EchoServer</span><span class="p">.</span><span class="n">Echo</span> \
+<span class="err">'</span><span class="n">message</span><span class="o">:</span><span class="s">"hello from qinzuoyan01"</span><span class="err">'</span>
+<span class="n">Response</span><span class="o">:</span>
+<span class="o">------------------------------</span>
+<span class="n">message</span><span class="o">:</span> <span class="s">"echo message: hello from qinzuoyan01"</span>
+<span class="o">------------------------------</span> 
+</code></pre></div>
+<h1>统计与监控</h1>
+
+<p>sofa-pbrpc支持对服务的调用进行统计，并以内建服务的方式导出统计信息。内建服务的proto定义参见&quot;sofa/pbrpc/builtin_service.proto&quot;。</p>
+
+<p>包含如下统计项:</p>
+
+<ul>
+<li>服务在最近N秒中调用的总成功次数、总失败次数；</li>
+<li>服务各个方法在最近N秒中调用的总成功次数、总失败次数、成功请求的平均耗时和最大耗时、失败请求的平均耗时和最大耗时；</li>
+<li>server端最多存储最近600秒的统计数据；
+使用sofa-pbrpc-client工具，可以很容易地获取统计信息，譬如：</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">sofa</span><span class="o">-</span><span class="n">pbrpc</span><span class="o">-</span><span class="n">client</span> <span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">12321</span> <span class="n">stat</span> <span class="n">sofa</span><span class="p">.</span><span class="n">pbrpc</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">EchoServer</span> <span class="mi">10</span>
+</code></pre></div>
+<p>上述命令用于获取&quot;sofa.pbrpc.test.EchoServer.Echo&quot;在最近10秒的调用统计，结果样例如下：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="nl">Response:</span>
+<span class="o">------------------------------</span>
+<span class="n">service_stats</span> <span class="p">{</span>
+  <span class="n">service_name</span><span class="o">:</span> <span class="s">"sofa.pbrpc.test.EchoServer"</span>
+  <span class="n">period_seconds</span><span class="o">:</span> <span class="mi">10</span>
+  <span class="n">succeed_count</span><span class="o">:</span> <span class="mi">1151699</span>
+  <span class="n">failed_count</span><span class="o">:</span> <span class="mi">0</span>
+  <span class="n">method_stats</span> <span class="p">{</span>
+    <span class="n">method_name</span><span class="o">:</span> <span class="s">"sofa.pbrpc.test.EchoServer.Echo"</span>
+    <span class="n">succeed_count</span><span class="o">:</span> <span class="mi">1151699</span>
+    <span class="n">succeed_avg_time_us</span><span class="o">:</span> <span class="mf">0.98021704</span>
+    <span class="n">succeed_max_time_us</span><span class="o">:</span> <span class="mi">1108</span>
+    <span class="n">failed_count</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="n">failed_avg_time_us</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="n">failed_max_time_us</span><span class="o">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">------------------------------</span>
+</code></pre></div>
+<p>除此之外，内建服务还提供了一些监控server状态的接口。sofa-pbrpc-client工具也提供了这些子命令：</p>
+
+<ul>
+<li>使用&quot;health&quot;子命令检查server是否存在；</li>
+<li>使用&quot;status&quot;子命令查看server的一些状态信息，包括连接数、服务数、以及Pending Buffer的一些信息；</li>
+<li>使用&quot;option&quot;子命令查看server当前的配置参数；</li>
+<li>使用&quot;list&quot;子命令查看server注册了哪些服务；</li>
+<li>使用&quot;desc&quot;子命令查询服务相关类型的proto描述;</li>
+</ul>
+
+<h1>HTTP支持</h1>
+
+<p>sofa-pbrpc从1.0.1开始支持HTTP方式调用服务，同时支持原生POST，GET以及扩展的POST PROTOBUF三种方式提交。另外还提供了Web监控页面，方便开发和测试。</p>
+
+<p>样例可以参见sample/echo/client_http.sh。</p>
+
+<h2>POST请求</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">curl -d <span class="s1">'{"message":"Hello, world!"}'</span> http://localhost:12321/sofa.pbrpc.test.EchoServer.Echo
+</code></pre></div>
+<p>规则：</p>
+
+<ul>
+<li>URL：http://host:port/method<em>full</em>name</li>
+<li>Body：Request Message的json字符串；</li>
+<li>返回：Content-Type: application/json；Body: Response Message的json字符串；</li>
+</ul>
+
+<h2>GET请求</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell">curl http://localhost:12321/sofa.pbrpc.test.EchoServer.Echo?request<span class="o">=</span>%7B%22message%22%3A%22Hello%2C%20world%21%22%7D
+</code></pre></div>
+<p>规则：</p>
+
+<ul>
+<li>URL：http://host:port/method<em>full</em>name?request=request<em>json</em>string</li>
+<li>request<em>json</em>string需要对特殊字符（{}[]:&quot;,）进行url encode；</li>
+<li>返回：同POST；</li>
+</ul>
+
+<h2>POST PROTOBUF请求</h2>
+
+<p>普通的GET POST请求使用JSON传递数据，在字段增多的情况下性能下降严重。 所以在条件许可的情况下请使用HTTP POST PROTOBUF的接口，样例可以参见：<a href="https://github.com/baidu/sofa-pbrpc/blob/master/python/sample/client_http_protobuf.py">python/sample/client<em>http</em>protobuf.py</a></p>
+
+<h1>Web监控</h1>
+
+<p>提供的页面（假设server监听端口为8080）：</p>
+
+<ul>
+<li>主页：http://localhost:8080/</li>
+<li>配置参数: http://localhost:8080/options</li>
+<li>状态：http://localhost:8080/status</li>
+<li>服务列表：http://localhost:8080/services</li>
+</ul>
+
+<p>主页示例
+<img src="/static/img/sofa-pbrpc-web-monitor.jpg" alt="主页示例:"></p>
+</div>
+    <hr />
+    <div class="share-page">
+    Share this on &rarr;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="\#">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google + -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Facebook -->
+<div class="fb-share-button" data-href="https://zd-double.github.io/blog/2016/08/01/advanced.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</article>
+<hr />
+
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/quick-start.html">快速使用</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/Installing.html">安装</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">欢迎使用sofa-pbrpc!</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+
+    </ul>
+    </div>
+
+
+<div class="PageNavigation">
+  
+    <a class="prev pull-left" href="/blog/2016/07/01/quick-start.html">&laquo; 快速使用</a>
+  
+  
+</div>
+
+
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = "zddouble";
+        var disqus_identifier = "https://zd-double.github.io_高级用法";
+        var disqus_title = "高级用法";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
+</div>
+</div>
+
+                <div class="row">
+                  <div class="col-md-12 col-xs-12 footer">
+                <footer>
+                    © Copyright text here
+                     
+                    - <a href="#">Privacy link</a> - Powered by Jekyll.
+                    
+                </footer>
+                <div align="center">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-0776433630785969"
+                       data-ad-slot="9690958902"
+                       data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+            </div>
+                </div>
+            </div> <!-- end /.col-md-9 -->
+        </div> <!-- end /.row -->
+
+    </div> <!-- end /.container -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+        <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="https://zd-double.github.io/static/js/thickbox-compressed.js"></script>
+        <script src="https://zd-double.github.io/static/js/material.min.js"></script>
+        <script src="https://zd-double.github.io/static/js/main.js"></script>
+        <script src="https://zd-double.github.io/static/js/projects.js"></script>
+    </body>
+</html>

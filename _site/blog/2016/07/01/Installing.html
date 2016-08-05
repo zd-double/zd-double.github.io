@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>Installing - sofa-pbrpc</title>
+        <title>安装 - sofa-pbrpc</title>
         <meta name="author" content="sofa-pbrpc" />
-        <meta name="description" content="Installing" />
-        <meta name="keywords" content="Installing, sofa-pbrpc, blog" />
+        <meta name="description" content="安装" />
+        <meta name="keywords" content="安装, sofa-pbrpc, blog" />
 
         <meta content="0" property="fb:app_id">
         <meta content="sofa-pbrpc" property="og:site_name">
         
-          <meta content="Installing" property="og:title">
+          <meta content="安装" property="og:title">
         
         
           <meta content="article" property="og:type">
@@ -26,7 +26,7 @@
           <meta content="https://zd-double.github.io/blog/2016/07/01/Installing.html" property="og:url">
         
         
-          <meta content="2016-07-01T21:50:39+08:00" property="article:published_time">
+          <meta content="2016-07-01T17:50:39+08:00" property="article:published_time">
           <meta content="https://zd-double.github.io/about/" property="article:author">
         
         
@@ -44,7 +44,7 @@
         <meta name="twitter:site" content="@\#">
         <meta name="twitter:creator" content="@\#">
         
-          <meta name="twitter:title" content="Installing">
+          <meta name="twitter:title" content="安装">
         
         
           <meta name="twitter:url" content="https://zd-double.github.io/blog/2016/07/01/Installing.html">
@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
-      <h2 class="blog-title-pro">Installing</h2>
+      <h2 class="blog-title-pro">安装</h2>
       <p class="info">
       
       <span class="time">01 Jul 2016</span>
@@ -196,28 +196,28 @@
     <div class="post"><p>本文档指引你如何构建sofa-pbrpc，包含：</p>
 
 <ul>
-  <li>编译依赖</li>
-  <li>编译</li>
-  <li>安装</li>
-  <li>单元测试</li>
-  <li>使用样例</li>
+<li>编译依赖</li>
+<li>编译</li>
+<li>安装</li>
+<li>单元测试</li>
+<li>使用样例</li>
 </ul>
 
-<h1 id="section">编译依赖</h1>
+<h1>编译依赖</h1>
 
 <p>sofa-pbrpc库的构建依赖boost-1.53.0、protobuf-2.4.1、snappy、zlib。</p>
 
-<h2 id="boost">Boost</h2>
+<h2>Boost</h2>
 
-<p>下载地址：http://downloads.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz</p>
+<p>下载地址：http://downloads.sourceforge.net/project/boost/boost/1.53.0/boost<em>1</em>53_0.tar.gz</p>
 
 <p>编译：因为只需要boost的头文件，所以解压即可，无需编译。</p>
 
-<p>配置：修改“depends.mk”，将BOOST_HEADER_DIR设置为解压得到的boost文件夹路径，譬如：</p>
+<p>配置：修改“depends.mk”，将BOOST<em>HEADER</em>DIR设置为解压得到的boost文件夹路径，譬如：</p>
 
-<p>BOOST_HEADER_DIR=/home/users/qinzuoyan01/libs/boost_1_53_0</p>
+<p>BOOST<em>HEADER</em>DIR=/home/users/qinzuoyan01/libs/boost<em>1</em>53_0</p>
 
-<h2 id="protobuf">Protobuf</h2>
+<h2>Protobuf</h2>
 
 <p>下载地址：http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz</p>
 
@@ -231,7 +231,7 @@ make install
 
 <p>PROTOBUF_DIR=/home/users/qinzuoyan01/libs/protobuf-2.4.1/output</p>
 
-<h2 id="snappy">Snappy</h2>
+<h2>Snappy</h2>
 
 <p>下载地址：http://snappy.googlecode.com/files/snappy-1.1.1.tar.gz</p>
 
@@ -245,13 +245,13 @@ make install
 
 <p>SNAPPY_DIR=/home/users/qinzuoyan01/libs/snappy-1.1.1/output</p>
 
-<h2 id="zlib">Zlib</h2>
+<h2>Zlib</h2>
 
 <p>如果你的系统库中已经安装zlib，请直接跳过。</p>
 
 <p>下载地址：http://zlib.net/zlib-1.2.8.tar.gz</p>
 
-<h1 id="section-1">编译：</h1>
+<h1>编译：</h1>
 
 <p>解压，cd到解压得到的文件夹下；
 ./configure –prefix=$PWD/output
@@ -264,7 +264,7 @@ make install
 
 <p>运行“make”进行编译。</p>
 
-<h1 id="section-2">安装</h1>
+<h1>安装</h1>
 
 <p>运行“make install”进行安装。</p>
 
@@ -274,8 +274,9 @@ make install
 
 <p>include/*
 lib/libsofa-pbrpc.a
-bin/sofa-pbrpc-client
-#  单元测试</p>
+bin/sofa-pbrpc-client</p>
+
+<h1>单元测试</h1>
 
 <p>进入单元测试文件夹“unit-test”。</p>
 
@@ -285,16 +286,15 @@ bin/sofa-pbrpc-client
 
 <p>测试：运行“sh run_test.sh”执行测试。</p>
 
-<h1 id="section-3">使用样例</h1>
+<h1>使用样例</h1>
 
 <p>进入样例文件夹“sample”。</p>
 
-<p>使用样例共有四个：echo/timeout_sample/compress_sample/mock_sample。</p>
+<p>使用样例共有四个：echo/timeout<em>sample/compress</em>sample/mock_sample。</p>
 
 <p>除了mock_sample，其他三个样例可直接进入文件夹运行“make”。</p>
 
 <p>mock_sample需要指定gtest依赖，配置方式与“unit-test”相同。</p>
-
 </div>
     <hr />
     <div class="share-page">
@@ -331,7 +331,24 @@ bin/sofa-pbrpc-client
                 <ul>
                 
                 <li class="relatedPost">
-                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc!</a>
+                    <a href="https://zd-double.github.io/blog/2016/08/01/advanced.html">高级用法</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/quick-start.html">快速使用</a>
                     
                         <small>(Categories: <a href="/category/blog">blog</a>)</small>
                     
@@ -355,7 +372,7 @@ bin/sofa-pbrpc-client
             
                 
                 <li class="relatedPost">
-                    <a href="https://zd-double.github.io/blog/2016/07/01/quick-start.html">Quick Start</a>
+                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">欢迎使用sofa-pbrpc!</a>
                     
                         <small>(Categories: <a href="/category/blog">blog</a>)</small>
                     
@@ -373,10 +390,10 @@ bin/sofa-pbrpc-client
 
 <div class="PageNavigation">
   
-    <a class="prev pull-left" href="/blog/2016/07/01/quick-start.html">&laquo; Quick Start</a>
+    <a class="prev pull-left" href="/blog/2016/07/01/welcome-to-sofa-pbrpc.html">&laquo; 欢迎使用sofa-pbrpc!</a>
   
   
-    <a class="next pull-right" href="/blog/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc! &raquo;</a>
+    <a class="next pull-right" href="/blog/2016/07/01/quick-start.html">快速使用 &raquo;</a>
   
 </div>
 
@@ -387,8 +404,8 @@ bin/sofa-pbrpc-client
         /* <![CDATA[ */
 
         var disqus_shortname = "zddouble";
-        var disqus_identifier = "https://zd-double.github.io_Installing";
-        var disqus_title = "Installing";
+        var disqus_identifier = "https://zd-double.github.io_安装";
+        var disqus_title = "安装";
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

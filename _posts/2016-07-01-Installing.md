@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Installing
-date:   2016-07-01 13:50:39
+title: 安装
+date: 2016-07-01 9:50:39
 categories: blog 
 ---
 

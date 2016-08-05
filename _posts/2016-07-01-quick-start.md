@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Quick Start  
-date:   2016-07-01 12:50:39
+title: 快速使用
+date:   2016-07-01 11:50:39
 categories: blog
 ---
 

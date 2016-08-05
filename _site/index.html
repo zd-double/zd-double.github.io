@@ -184,10 +184,10 @@
           <i class="fa fa-sticky-note"></i>
         </div>
         <div class="row-content">
-          <div class="least-content">01 Jul 2016</div>
-          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/welcome-to-sofa-pbrpc.html">Welcome to sofa-pbrpc!</a></h4>
+          <div class="least-content">01 Aug 2016</div>
+          <h4 class="list-group-item-heading"><a href="/blog/2016/08/01/advanced.html">高级用法</a></h4>
 
-          <p class="list-group-item-text">欢迎来到sofa-pbrpc的中文Wiki页面！ sofa-pbrpc(sofa protobuf-based rpc)是使用Boost::Asio实现的基于Google Protocol Buffers RPC框架的网络通信库，在百度公司各部门得到广泛使用。 目标 轻量 易用 高性能 特性 接口简单，容易使用 实现高效，性能优异（高吞吐、低延迟、高并发连接数） 测试完善，运行稳定 支持同步和异步调用，满足不同类型需求 支持多级超时设定，灵活控制请求超时时间 支持精准的网络流量控制，对应用层透明 支持透明压缩传输，节省带宽 提供服务和方法级别的服务调用统计信息，方便监控...</p>
+          <p class="list-group-item-text">本文档包括： 超时控制 压缩控制 带宽限制 日志打印 RpcController使用 RPC失败处理 Server/Client配置参数 多Server负载均衡与容错 辅助开发工具类 Mock测试 sofa-pbrpc-client工具 统计与监控 HTTP支持 Web监控 超时控制 sofa-pbrpc-clienta-pbrpc支持三个级别的超时控制，按照生效的优先级由高到低依次为： Request超时：在RpcController中使用SetTimeout()函数设置超时时间（毫秒），该超时只对本次请求有效；如果不设置，则使用“Method超时”或者“Service超时”； Method超时：在proto文件中指定method的超时时间（毫秒），该超时对该方法的所有请求有效；如果不设置，则使用Service超时； Service超时：在proto文件中指定service的超时时间（毫秒），该超时对该服务的所有方法的所有请求都有效；如果不设置，则使用默认值（10000毫秒）。...</p>
         </div>
       </div>
       <div class="list-group-separator"></div>
@@ -198,22 +198,35 @@
         </div>
         <div class="row-content">
           <div class="least-content">01 Jul 2016</div>
-          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/Installing.html">Installing</a></h4>
-
-          <p class="list-group-item-text">本文档指引你如何构建sofa-pbrpc，包含： 编译依赖 编译 安装 单元测试 使用样例 编译依赖 sofa-pbrpc库的构建依赖boost-1.53.0、protobuf-2.4.1、snappy、zlib。 Boost 下载地址：http://downloads.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz 编译：因为只需要boost的头文件，所以解压即可，无需编译。 配置：修改“depends.mk”，将BOOST_HEADER_DIR设置为解压得到的boost文件夹路径，譬如： BOOST_HEADER_DIR=/home/users/qinzuoyan01/libs/boost_1_53_0 Protobuf 下载地址：http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz 编译： 解压，cd到解压得到的文件夹下； ./configure –prefix=$PWD/output make...</p>
-        </div>
-      </div>
-      <div class="list-group-separator"></div>
-      
-      <div class="list-group-item">
-        <div class="row-action-primary">
-          <i class="fa fa-sticky-note"></i>
-        </div>
-        <div class="row-content">
-          <div class="least-content">01 Jul 2016</div>
-          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/quick-start.html">Quick Start</a></h4>
+          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/quick-start.html">快速使用</a></h4>
 
           <p class="list-group-item-text">快速使用三部曲 使用sofa-pbrpc只需要三步： 定义通讯协议 实现Server 实现Client 样例代码参见“sample/echo”。 定义通讯协议 定义协议只需要编写一个proto文件即可。范例：echo_service.proto package sofa.pbrpc.test; option cc_generic_services = true; // 定义请求消息 message EchoRequest { required...</p>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+      
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="fa fa-sticky-note"></i>
+        </div>
+        <div class="row-content">
+          <div class="least-content">01 Jul 2016</div>
+          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/Installing.html">安装</a></h4>
+
+          <p class="list-group-item-text">本文档指引你如何构建sofa-pbrpc，包含： 编译依赖 编译 安装 单元测试 使用样例 编译依赖 sofa-pbrpc库的构建依赖boost-1.53.0、protobuf-2.4.1、snappy、zlib。 Boost 下载地址：http://downloads.sourceforge.net/project/boost/boost/1.53.0/boost153_0.tar.gz 编译：因为只需要boost的头文件，所以解压即可，无需编译。 配置：修改“depends.mk”，将BOOSTHEADERDIR设置为解压得到的boost文件夹路径，譬如： BOOSTHEADERDIR=/home/users/qinzuoyan01/libs/boost153_0 Protobuf 下载地址：http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz 编译： 解压，cd到解压得到的文件夹下； ./configure –prefix=$PWD/output make...</p>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+      
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="fa fa-sticky-note"></i>
+        </div>
+        <div class="row-content">
+          <div class="least-content">01 Jul 2016</div>
+          <h4 class="list-group-item-heading"><a href="/blog/2016/07/01/welcome-to-sofa-pbrpc.html">欢迎使用sofa-pbrpc!</a></h4>
+
+          <p class="list-group-item-text">欢迎来到sofa-pbrpc的中文Wiki页面！ sofa-pbrpc(sofa protobuf-based rpc)是使用Boost::Asio实现的基于Google Protocol Buffers RPC框架的网络通信库，在百度公司各部门得到广泛使用。 目标 轻量 易用 高性能 特性 接口简单，容易使用 实现高效，性能优异（高吞吐、低延迟、高并发连接数） 测试完善，运行稳定 支持同步和异步调用，满足不同类型需求 支持多级超时设定，灵活控制请求超时时间 支持精准的网络流量控制，对应用层透明 支持透明压缩传输，节省带宽 提供服务和方法级别的服务调用统计信息，方便监控...</p>
         </div>
       </div>
       <div class="list-group-separator"></div>
