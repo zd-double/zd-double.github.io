@@ -196,8 +196,54 @@
     <div class="post"><p>本文档包括：</p>
 
 <ul>
+<li>WebService</li>
 <li>Profiling</li>
 </ul>
+
+<h1>WebService</h1>
+
+<p>为了能够支持web服务的开发，sofa-pbrpc 引入WebService的功能。WebService使用Web(HTTP)方式接收和响应外部系统的某种请求,从而实现远程调用.  使用webService，用户需要进行以下工作：</p>
+
+<ul>
+<li>定义WebService的处理函数
+WebService的处理函数结构为</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="kt">bool</span> <span class="nf">ProcFunc</span><span class="p">(</span><span class="k">const</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPRequest</span><span class="o">&amp;</span> <span class="n">request</span><span class="p">,</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPResponse</span><span class="o">&amp;</span> <span class="n">response</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="p">...</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>如下面例子所示：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="kt">bool</span> <span class="nf">WebServlet</span><span class="p">(</span><span class="k">const</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPRequest</span><span class="o">&amp;</span> <span class="n">request</span><span class="p">,</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPResponse</span><span class="o">&amp;</span> <span class="n">response</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"WebServlet(): request message from %s:%u"</span><span class="p">,</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">client_ip</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">request</span><span class="p">.</span><span class="n">client_port</span><span class="p">);</span>
+    <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"HTTP-PATH=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">query_params</span> <span class="o">=</span> <span class="o">*</span><span class="n">request</span><span class="p">.</span><span class="n">query_params</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">query_params</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">query_params</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"QueryParam[</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">]=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">headers</span> <span class="o">=</span> <span class="o">*</span><span class="n">request</span><span class="p">.</span><span class="n">headers</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">headers</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"Header[</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">]=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="o">-&gt;</span><span class="n">Append</span><span class="p">(</span><span class="s">"&lt;h1&gt;Hello from sofa-pbrpc web server&lt;/h1&gt;"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>根据处理函数，创建WebService的Servilet。</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">Servlet</span> <span class="n">servlet</span> <span class="o">=</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">NewPermanentExtClosure</span><span class="p">(</span><span class="o">&amp;</span><span class="n">WebServlet</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>将Servilet注册到某一WebServer的路径下</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">rpc_server</span><span class="p">.</span><span class="n">RegisterWebServlet</span><span class="p">(</span><span class="s">"/hello"</span><span class="p">,</span> <span class="n">servlet</span><span class="p">);</span>
+</code></pre></div>
+<p>下图为基于WebService实现的sofa-pbrpc监控主页：</p>
+
+<p><img src="/static/img/webservice.png" alt="webservice"></p>
 
 <h1>Profiling</h1>
 
@@ -206,8 +252,9 @@
 *  联编gperftools的lib库
 *  在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项</p>
 
-<p>最后生成的Profiling视图如下所示：
-<img src="/static/img/profiling.png" alt="profiling"></p>
+<p>最后生成的Profiling视图如下所示：</p>
+
+<p><img src="/static/img/profiling.png" alt="profiling"></p>
 </div>
     <hr />
     <div class="share-page">

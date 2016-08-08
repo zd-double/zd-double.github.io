@@ -7,7 +7,56 @@ categories: blog
 
 本文档包括：
 
+* WebService
 * Profiling
+
+# WebService
+ 为了能够支持web服务的开发，sofa-pbrpc 引入WebService的功能。WebService使用Web(HTTP)方式接收和响应外部系统的某种请求,从而实现远程调用.  使用webService，用户需要进行以下工作：
+
+ * 定义WebService的处理函数
+ WebService的处理函数结构为
+
+ ```c++
+ bool ProcFunc(const sofa::pbrpc::HTTPRequest& request, sofa::pbrpc::HTTPResponse& response)
+ {
+ 	...
+ }
+ ```
+
+ 如下面例子所示：
+
+ ```c++
+ bool WebServlet(const sofa::pbrpc::HTTPRequest& request, sofa::pbrpc::HTTPResponse& response)
+{
+    SLOG(INFO, "WebServlet(): request message from %s:%u",
+            request.client_ip.c_str(), request.client_port);
+    SLOG(INFO, "HTTP-PATH=\"%s\"", request.path.c_str());
+    std::map<std::string, std::string>::const_iterator it;
+    const std::map<std::string, std::string>& query_params = *request.query_params;
+    for (it = query_params.begin(); it != query_params.end(); ++it) {
+        SLOG(INFO, "QueryParam[\"%s\"]=\"%s\"", it->first.c_str(), it->second.c_str());
+    }
+    const std::map<std::string, std::string>& headers = *request.headers;
+    for (it = headers.begin(); it != headers.end(); ++it) {
+        SLOG(INFO, "Header[\"%s\"]=\"%s\"", it->first.c_str(), it->second.c_str());
+    }
+    return response.content->Append("<h1>Hello from sofa-pbrpc web server</h1>");
+}
+ ```
+ * 根据处理函数，创建WebService的Servilet。
+
+ ```c++
+ sofa::pbrpc::Servlet servlet = sofa::pbrpc::NewPermanentExtClosure(&WebServlet);
+ ```
+
+ * 将Servilet注册到某一WebServer的路径下
+ 
+ ```c++
+rpc_server.RegisterWebServlet("/hello", servlet);
+ ```
+ 下图为基于WebService实现的sofa-pbrpc监控主页：
+
+![webservice](/static/img/webservice.png)
 
 # Profiling
 
@@ -18,6 +67,7 @@ categories: blog
 *  在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项
 
 最后生成的Profiling视图如下所示：
+
 ![profiling](/static/img/profiling.png)
 
 
