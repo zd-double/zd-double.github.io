@@ -5,9 +5,36 @@
     <description>Sofa-pbrpc Blog</description>
     <link>https://zd-double.github.io/</link>
     <atom:link href="https://zd-double.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Aug 2016 22:10:24 +0800</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 22:10:24 +0800</lastBuildDate>
+    <pubDate>Mon, 08 Aug 2016 08:11:24 +0800</pubDate>
+    <lastBuildDate>Mon, 08 Aug 2016 08:11:24 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>最新功能</title>
+        <description>&lt;p&gt;本文档包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Profiling&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Profiling&lt;/h1&gt;
+
+&lt;p&gt;为分析应用程序各个模块对硬件资源的消耗，方便用户排插性能瓶颈和性能调优，sofa-pbrpc实现了方便快捷的profiling功能。用户只需在应用程序联编 gperftools 库即可查看server的profiling数据，然后通过访问server的监控页面中profiling选项就可以对server程序进行Profiling操作，server端不需要安装graphviz直接在浏览器查看profiling生成的dot图。
+用户程序只需做如下操作：
+*  联编gperftools的lib库
+*  在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项&lt;/p&gt;
+
+&lt;p&gt;最后生成的Profiling视图如下所示：
+&lt;img src=&quot;/static/img/profiling.png&quot; alt=&quot;profiling&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Aug 2016 21:50:39 +0800</pubDate>
+        <link>https://zd-double.github.io/blog/2016/08/01/new-features.html</link>
+        <guid isPermaLink="true">https://zd-double.github.io/blog/2016/08/01/new-features.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>高级用法</title>

@@ -185,6 +185,34 @@
         </div>
         <div class="row-content">
           <div class="least-content">01 Aug 2016</div>
+          <h4 class="list-group-item-heading"><a href="/blog/2016/08/01/new-features.html">最新功能</a></h4>
+
+          <p class="list-group-item-text">本文档包括：
+
+
+Profiling
+
+
+Profiling
+
+为分析应用程序各个模块对硬件资源的消耗，方便用户排插性能瓶颈和性能调优，sofa-pbrpc实现了方便快捷的profiling功能。用户只需在应用程序联编 gperftools 库即可查看server的profiling数据，然后通过访问server的监控页面中profiling选项就可以对server程序进行Profiling操作，server端不需要安装graphviz直接在浏览器查看profiling生成的dot图。
+用户程序只需做如下操作：
+*  联编gperftools的lib库
+*  在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项
+
+最后生成的Profiling视图如下所示：
+
+</p>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+      
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="fa fa-sticky-note"></i>
+        </div>
+        <div class="row-content">
+          <div class="least-content">01 Aug 2016</div>
           <h4 class="list-group-item-heading"><a href="/blog/2016/08/01/advanced.html">高级用法</a></h4>
 
           <p class="list-group-item-text">本文档包括： 超时控制 压缩控制 带宽限制 日志打印 RpcController使用 RPC失败处理 Server/Client配置参数 多Server负载均衡与容错 辅助开发工具类 Mock测试 sofa-pbrpc-client工具 统计与监控 HTTP支持 Web监控 超时控制 sofa-pbrpc-clienta-pbrpc支持三个级别的超时控制，按照生效的优先级由高到低依次为： Request超时：在RpcController中使用SetTimeout()函数设置超时时间（毫秒），该超时只对本次请求有效；如果不设置，则使用“Method超时”或者“Service超时”； Method超时：在proto文件中指定method的超时时间（毫秒），该超时对该方法的所有请求有效；如果不设置，则使用Service超时； Service超时：在proto文件中指定service的超时时间（毫秒），该超时对该服务的所有方法的所有请求都有效；如果不设置，则使用默认值（10000毫秒）。...</p>
