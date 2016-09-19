@@ -5,8 +5,8 @@
     <description>Sofa-pbrpc Blog</description>
     <link>https://zd-double.github.io/</link>
     <atom:link href="https://zd-double.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Sep 2016 16:01:14 +0800</pubDate>
-    <lastBuildDate>Mon, 19 Sep 2016 16:01:14 +0800</lastBuildDate>
+    <pubDate>Mon, 19 Sep 2016 20:27:03 +0800</pubDate>
+    <lastBuildDate>Mon, 19 Sep 2016 20:27:03 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -1024,7 +1024,7 @@ bin/sofa-pbrpc-client&lt;/p&gt;
 &lt;li&gt;Provide web monitor.&lt;/li&gt;
 &lt;li&gt;Provide python client library.&lt;/li&gt;
 &lt;li&gt;Provide WebService to implement a web server. &lt;/li&gt;
-&lt;li&gt;Provide Profiling.&lt;/li&gt;
+&lt;li&gt;Support Profiling.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1&gt;Dependings&lt;/h1&gt;
