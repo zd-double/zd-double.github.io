@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>Benchmark - sofa-pbrpc</title>
+        <meta name="author" content="sofa-pbrpc" />
+        <meta name="description" content="Benchmark" />
+        <meta name="keywords" content="Benchmark, sofa-pbrpc, " />
+
+        <meta content="0" property="fb:app_id">
+        <meta content="sofa-pbrpc" property="og:site_name">
+        
+          <meta content="Benchmark" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="Sofa-pbrpc Blog" property="og:description">
+        
+        
+          <meta content="https://zd-double.github.io/benchmark/" property="og:url">
+        
+        
+        
+          <meta content="http://aboutashu.com/static/img/logo-high-resolution.png" property="og:image">
+        
+        
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@\#">
+        <meta name="twitter:creator" content="@\#">
+        
+          <meta name="twitter:title" content="Benchmark">
+        
+        
+          <meta name="twitter:url" content="https://zd-double.github.io/benchmark/">
+        
+        
+          <meta name="twitter:description" content="Sofa-pbrpc Blog">
+        
+        
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <!-- FontAwesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/74dfc6cf47.css">
+
+        <!-- Core BootStrap CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Material Design CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/bootstrap-material-design.min.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/syntax.css">
+
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/thickbox.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/main.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/projects.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72862926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </head>
+
+    <body class="home overflow-hidden">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header-panel shadow-z-2">
+    <div class="container">
+    <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+      <div class="row-picture">
+        <img id="about" class="logo-img" src="http://aboutashu.com/hcz-jekyll-blog/static/img/avatar.png" height="75px" width="75px">
+      </div>
+      <div class="row-details">
+      <h4 class="list-group-item-heading">sofa-pbrpc</h4>
+      <p class="list-group-item-text">A light-weight RPC implement of google protobuf RPC framework.</p>
+      <div class="social-icons">
+	
+        <a class="icon" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-skype"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-stack-exchange"></i></a>
+    
+</div>
+      </div>
+        <div class="navbar-header pull-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-2x fa-bars"></i>
+            </button>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+      <h2 class="blog-title-pro">Benchmark</h2>
+      <p class="info">
+      
+      
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="container main outer">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                    <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary page">
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  benchmark"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  benchmark"><a href="/projects/"><i class="fa fa-desktop"></i> Projects</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item benchmark"><a href="/benchmark/"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  benchmark"><a href="https://github.com/baidu/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  benchmark"><a href="/documents/"><i class="fa fa-feed"></i> Documents</a></li>
+
+</ul>
+    </div>
+    </nav>
+
+            </div> <!-- end /.col-md-3 -->
+
+            <div class="col-md-9 col-xs-12 full">
+                <div class="well">
+    
+    <div>
+    	<h1>Benchmark</h1>
+
+<h2>测试环境</h2>
+
+<ul>
+<li>CPU : 16 core </li>
+<li>Memory : 64G</li>
+<li>Kernel : 2.6.32_1-17-0-0</li>
+</ul>
+
+<h2>吞吐</h2>
+
+<p><img src="/assets/bench_qps.jpg" alt="bench_qps"></p>
+
+<h2>延迟</h2>
+
+<p><img src="/assets/bench_delay.jpg" alt="bench_delay"></p>
+
+    </div>
+</div>
+
+
+                <div class="row">
+                  <div class="col-md-12 col-xs-12 footer">
+                <footer>
+                    © Copyright text here
+                     
+                    - <a href="#">Privacy link</a> - Powered by Jekyll.
+                    
+                </footer>
+                <div align="center">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-0776433630785969"
+                       data-ad-slot="9690958902"
+                       data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+            </div>
+                </div>
+            </div> <!-- end /.col-md-9 -->
+        </div> <!-- end /.row -->
+
+    </div> <!-- end /.container -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+        <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="https://zd-double.github.io/static/js/thickbox-compressed.js"></script>
+        <script src="https://zd-double.github.io/static/js/material.min.js"></script>
+        <script src="https://zd-double.github.io/static/js/main.js"></script>
+        <script src="https://zd-double.github.io/static/js/projects.js"></script>
+    </body>
+</html>

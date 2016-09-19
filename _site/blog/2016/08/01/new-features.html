@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>最新功能 - sofa-pbrpc</title>
+        <meta name="author" content="sofa-pbrpc" />
+        <meta name="description" content="最新功能" />
+        <meta name="keywords" content="最新功能, sofa-pbrpc, blog" />
+
+        <meta content="0" property="fb:app_id">
+        <meta content="sofa-pbrpc" property="og:site_name">
+        
+          <meta content="最新功能" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="Sofa-pbrpc Blog" property="og:description">
+        
+        
+          <meta content="https://zd-double.github.io/blog/2016/08/01/new-features.html" property="og:url">
+        
+        
+          <meta content="2016-08-01T21:50:39+08:00" property="article:published_time">
+          <meta content="https://zd-double.github.io/about/" property="article:author">
+        
+        
+          <meta content="http://aboutashu.com/static/img/logo-high-resolution.png" property="og:image">
+        
+        
+          
+          <meta content="blog" property="article:section">
+          
+        
+        
+          
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@\#">
+        <meta name="twitter:creator" content="@\#">
+        
+          <meta name="twitter:title" content="最新功能">
+        
+        
+          <meta name="twitter:url" content="https://zd-double.github.io/blog/2016/08/01/new-features.html">
+        
+        
+          <meta name="twitter:description" content="Sofa-pbrpc Blog">
+        
+        
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <!-- FontAwesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/74dfc6cf47.css">
+
+        <!-- Core BootStrap CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Material Design CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/bootstrap-material-design.min.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/syntax.css">
+
+        <!-- Custom CSS -->        
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/thickbox.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/main.css">
+        <link rel="stylesheet" href="https://zd-double.github.io/static/css/projects.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72862926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </head>
+
+    <body class="home overflow-hidden">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header-panel shadow-z-2">
+    <div class="container">
+    <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+      <div class="row-picture">
+        <img id="about" class="logo-img" src="http://aboutashu.com/hcz-jekyll-blog/static/img/avatar.png" height="75px" width="75px">
+      </div>
+      <div class="row-details">
+      <h4 class="list-group-item-heading">sofa-pbrpc</h4>
+      <p class="list-group-item-text">A light-weight RPC implement of google protobuf RPC framework.</p>
+      <div class="social-icons">
+	
+        <a class="icon" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-skype"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+    
+        <a class="icon" target="_blank" href="#"><i class="fa fa-stack-exchange"></i></a>
+    
+</div>
+      </div>
+        <div class="navbar-header pull-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-2x fa-bars"></i>
+            </button>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+      <h2 class="blog-title-pro">最新功能</h2>
+      <p class="info">
+      
+      <span class="time">01 Aug 2016</span>
+      
+      
+    <span class="categories">
+        &raquo; <a href="/category/blog">blog</a>
+    </span>
+    
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="container main outer">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                    <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary post">
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item new-features.html"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  new-features.html"><a href="/projects/"><i class="fa fa-desktop"></i> Projects</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  new-features.html"><a href="/benchmark/"><i class="fa fa-graduation-cap"></i> Benchmark</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  new-features.html"><a href="https://github.com/baidu/sofa-pbrpc"><i class="fa fa-github"></i> Github</a></li>
+
+	
+	
+	
+	
+	
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  new-features.html"><a href="/documents/"><i class="fa fa-feed"></i> Documents</a></li>
+
+</ul>
+    </div>
+    </nav>
+
+            </div> <!-- end /.col-md-3 -->
+
+            <div class="col-md-9 col-xs-12 full">
+                <div class="post-content well">
+<article class="content">
+    <div class="post"><p>本文档包括：</p>
+
+<ul>
+<li>WebService</li>
+<li>Profiling</li>
+</ul>
+
+<h1>WebService</h1>
+
+<p>为了能够支持web服务的开发，sofa-pbrpc 引入WebService的功能。WebService使用Web(HTTP)方式接收和响应外部系统的某种请求,从而实现远程调用.  使用webService，用户需要进行以下工作：</p>
+
+<ul>
+<li>定义WebService的处理函数
+WebService的处理函数结构为</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="kt">bool</span> <span class="nf">ProcFunc</span><span class="p">(</span><span class="k">const</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPRequest</span><span class="o">&amp;</span> <span class="n">request</span><span class="p">,</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPResponse</span><span class="o">&amp;</span> <span class="n">response</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="p">...</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>如下面例子所示：</p>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="kt">bool</span> <span class="nf">WebServlet</span><span class="p">(</span><span class="k">const</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPRequest</span><span class="o">&amp;</span> <span class="n">request</span><span class="p">,</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">HTTPResponse</span><span class="o">&amp;</span> <span class="n">response</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"WebServlet(): request message from %s:%u"</span><span class="p">,</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">client_ip</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">request</span><span class="p">.</span><span class="n">client_port</span><span class="p">);</span>
+    <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"HTTP-PATH=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">query_params</span> <span class="o">=</span> <span class="o">*</span><span class="n">request</span><span class="p">.</span><span class="n">query_params</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">query_params</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">query_params</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"QueryParam[</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">]=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">headers</span> <span class="o">=</span> <span class="o">*</span><span class="n">request</span><span class="p">.</span><span class="n">headers</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">headers</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SLOG</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s">"Header[</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">]=</span><span class="se">\"</span><span class="s">%s</span><span class="se">\"</span><span class="s">"</span><span class="p">,</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span><span class="o">-&gt;</span><span class="n">Append</span><span class="p">(</span><span class="s">"&lt;h1&gt;Hello from sofa-pbrpc web server&lt;/h1&gt;"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>根据处理函数，创建WebService的Servilet。</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">Servlet</span> <span class="n">servlet</span> <span class="o">=</span> <span class="n">sofa</span><span class="o">::</span><span class="n">pbrpc</span><span class="o">::</span><span class="n">NewPermanentExtClosure</span><span class="p">(</span><span class="o">&amp;</span><span class="n">WebServlet</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>将Servilet注册到某一WebServer的路径下</li>
+</ul>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">rpc_server</span><span class="p">.</span><span class="n">RegisterWebServlet</span><span class="p">(</span><span class="s">"/hello"</span><span class="p">,</span> <span class="n">servlet</span><span class="p">);</span>
+</code></pre></div>
+<p>下图为基于WebService实现的sofa-pbrpc监控主页：</p>
+
+<p><img src="/static/img/webservice.png" alt="webservice"></p>
+
+<h1>Profiling</h1>
+
+<p>为分析应用程序各个模块对硬件资源的消耗，方便用户排查性能瓶颈和性能调优，sofa-pbrpc实现了方便快捷的profiling功能。用户只需在应用程序联编 gperftools 库即可查看server的profiling数据，然后通过访问server的监控页面中profiling选项就可以对server程序进行Profiling操作，server端不需要安装graphviz直接在浏览器查看profiling生成的dot图。
+用户程序只需做如下操作：</p>
+
+<ul>
+<li> 联编gperftools的lib库</li>
+<li> 在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项</li>
+</ul>
+
+<p>最后生成的Profiling视图如下所示：</p>
+
+<p><img src="/static/img/profiling.png" alt="profiling"></p>
+</div>
+    <hr />
+    <div class="share-page">
+    Share this on &rarr;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="\#">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google + -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Facebook -->
+<div class="fb-share-button" data-href="https://zd-double.github.io/blog/2016/08/01/new-features.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</article>
+<hr />
+
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/08/01/advanced.html">高级用法</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/quick-start.html">快速使用</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/Installing.html">安装</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc-cn.html">欢迎使用sofa-pbrpc!</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+    
+    
+        
+            
+                
+                <li class="relatedPost">
+                    <a href="https://zd-double.github.io/blog/2016/07/01/welcome-to-sofa-pbrpc.html">welcome-to-sofa-pbrpc!</a>
+                    
+                        <small>(Categories: <a href="/category/blog">blog</a>)</small>
+                    
+                </li>
+                
+                
+            
+        
+    
+
+
+    </ul>
+    </div>
+
+
+<div class="PageNavigation">
+  
+    <a class="prev pull-left" href="/blog/2016/08/01/advanced.html">&laquo; 高级用法</a>
+  
+  
+</div>
+
+
+<div class="disqus-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+
+        var disqus_shortname = "zddouble";
+        var disqus_identifier = "https://zd-double.github.io_最新功能";
+        var disqus_title = "最新功能";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    /* ]]> */
+    </script>
+</div>
+</div>
+
+                <div class="row">
+                  <div class="col-md-12 col-xs-12 footer">
+                <footer>
+                    © Copyright text here
+                     
+                    - <a href="#">Privacy link</a> - Powered by Jekyll.
+                    
+                </footer>
+                <div align="center">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-0776433630785969"
+                       data-ad-slot="9690958902"
+                       data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+            </div>
+                </div>
+            </div> <!-- end /.col-md-9 -->
+        </div> <!-- end /.row -->
+
+    </div> <!-- end /.container -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        
+        <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="https://zd-double.github.io/static/js/thickbox-compressed.js"></script>
+        <script src="https://zd-double.github.io/static/js/material.min.js"></script>
+        <script src="https://zd-double.github.io/static/js/main.js"></script>
+        <script src="https://zd-double.github.io/static/js/projects.js"></script>
+    </body>
+</html>
