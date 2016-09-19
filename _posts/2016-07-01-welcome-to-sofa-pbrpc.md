@@ -43,7 +43,7 @@ This lib depends on boost-1.53.0 (only need header), protobuf-2.4.1, snappy and 
 
 > **ATTENTION:**
 > 
-> 1.  boost header is only needed when compiling the lib, but no need for user code.google.com
+> 1.  boost header is only needed when compiling the lib, but no need for user code.
 > 
 > 2.  Extrally, './unit-test' and './sample/mock_sample' also depends on gtest:
         gtest - http://code.google.com/p/googletest/
