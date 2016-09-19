@@ -1,60 +1,71 @@
 ---
 layout: post
-title:  "欢迎使用sofa-pbrpc!"
+title:  "welcome-to-sofa-pbrpc!"
 date:   2016-07-01 8:50:39
 categories: blog
 ---
-欢迎来到sofa-pbrpc的中文Wiki页面！
 
-sofa-pbrpc(sofa protobuf-based rpc)是使用Boost::Asio实现的基于Google Protocol Buffers RPC框架的网络通信库，在百度公司各部门得到广泛使用。
+# Welcome to the sofa-pbrpc Wiki page!
+
+[**sofa-pbrpc**](https://github.com/baidu/sofa-pbrpc) is a light-weight RPC implement of google protobuf RPC framework.
+
+Wiki: [https://github.com/baidu/sofa-pbrpc/wiki](https://github.com/baidu/sofa-pbrpc/wiki)
+
+[View original](https://github.com/baidu/sofa-pbrpc)
+
+# Features
+
+* High performace.
+* Easy to use. Refer to sample codes in ['./sample'](https://github.com/baidu/sofa-pbrpc/tree/master/sample).
+* Support sync call and async call. Refer to ['./sample/echo'](https://github.com/baidu/sofa-pbrpc/tree/master/sample/echo).
+* Support three level (service/method/request) timeout. Refer to ['./sample/timeout_sample'](https://github.com/baidu/sofa-pbrpc/tree/master/sample/timeout_sample).
+* Support transparent compression. Refer to ['./sample/compress_sample'](https://github.com/baidu/sofa-pbrpc/tree/master/sample/compress_sample).
+* Support mock test. Refer to ['./sample/mock_sample'](https://github.com/baidu/sofa-pbrpc/tree/master/sample/mock_sample).
+* Support network flow control.
+* Support auto connecting and reconnecting.
+* Support keep alive time of idle connections.
+* Support statistics for profiling.
+* Support multi-server load balance and fault tolerance.
+* Support http protocol.
+* Provide web monitor.
+* Provide python client library.
+* Provide WebService to implement a web server. 
+* Provide Profiling.
+
+# Dependings
+
+This lib depends on boost-1.53.0 (only need header), protobuf-2.4.1, snappy and zlib:
+
+* boost - http://www.boost.org/
+* protobuf - http://code.google.com/p/protobuf/
+* snappy - http://code.google.com/p/snappy/
+* zlib - http://zlib.net/
+
+> **ATTENTION:**
+> 
+> 1.  boost header is only needed when compiling the lib, but no need for user code.google.com
+> 
+> 2.  Extrally, './unit-test' and './sample/mock_sample' also depends on gtest:
+        gtest - http://code.google.com/p/googletest/
+
+# Build
+
+1. Modify the file ['./depends.mk'](https://github.com/baidu/sofa-pbrpc/blob/master/depends.mk) to specify depending libs,
+   	The necessary libs is boost, protobuf, snappy, and zlib.
+2. Run 'make' to build sofa-pbrpc.
+	The default optimization level is 'O2',
+	To change it, modify the 'OPT' variable in file['./Makefile'](https://github.com/baidu/sofa-pbrpc/blob/master/Makefile).
+3. Run 'make install' to install sofa-pbrpc,
+	The default install directory is './output'.
+	To change it, modify the 'PREFIX' variable in file ['./Makefile'](https://github.com/baidu/sofa-pbrpc/blob/master/Makefile).
+For more details, please refer to the wiki.
 
 
+# Sample
 
-# 目标
+For sample codes, please refer to ['./sample'](https://github.com/baidu/sofa-pbrpc/tree/master/sample) and the wiki.
 
-* 轻量
-* 易用
-* 高性能
 
-# 特性
+# Support
 
-* 接口简单，容易使用
-* 实现高效，性能优异（高吞吐、低延迟、高并发连接数）
-* 测试完善，运行稳定
-* 支持同步和异步调用，满足不同类型需求
-* 支持多级超时设定，灵活控制请求超时时间
-* 支持精准的网络流量控制，对应用层透明
-* 支持透明压缩传输，节省带宽
-* 提供服务和方法级别的服务调用统计信息，方便监控
-* 支持自动建立连接和自动重连，用户无需感知连接
-* 远程地址相同的Client Stub共享一个连接通道，节省资源
-* 空闲连接自动关闭，及时释放资源
-* 支持Mock测试
-* 支持多Server负载均衡与容错
-* 原生支持HTTP协议访问
-* 提供内建的Web监控页面
-* 提供Python客户端库
-
-# 构建
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/构建指引](https://github.com/BaiduPS/sofa-pbrpc/wiki/构建指引)
-
-# 快速使用
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/快速使用](https://github.com/BaiduPS/sofa-pbrpc/wiki/快速使用)
-
-# 高级使用
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/高级使用](https://github.com/BaiduPS/sofa-pbrpc/wiki/高级使用)
-
-# Python客户端
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/Python客户端](https://github.com/BaiduPS/sofa-pbrpc/wiki/Python客户端)
-
-# RPC协议
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/RPC协议](https://github.com/BaiduPS/sofa-pbrpc/wiki/RPC协议)
-
-# 性能
-
-参见[https://github.com/BaiduPS/sofa-pbrpc/wiki/性能](https://github.com/BaiduPS/sofa-pbrpc/wiki/性能)
+[opensearch@baidu.com](opensearch@baidu.com)

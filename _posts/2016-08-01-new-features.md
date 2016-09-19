@@ -61,8 +61,9 @@ rpc_server.RegisterWebServlet("/hello", servlet);
 # Profiling
 
 
-为分析应用程序各个模块对硬件资源的消耗，方便用户排插性能瓶颈和性能调优，sofa-pbrpc实现了方便快捷的profiling功能。用户只需在应用程序联编 gperftools 库即可查看server的profiling数据，然后通过访问server的监控页面中profiling选项就可以对server程序进行Profiling操作，server端不需要安装graphviz直接在浏览器查看profiling生成的dot图。
+为分析应用程序各个模块对硬件资源的消耗，方便用户排查性能瓶颈和性能调优，sofa-pbrpc实现了方便快捷的profiling功能。用户只需在应用程序联编 gperftools 库即可查看server的profiling数据，然后通过访问server的监控页面中profiling选项就可以对server程序进行Profiling操作，server端不需要安装graphviz直接在浏览器查看profiling生成的dot图。
 用户程序只需做如下操作：
+
 *  联编gperftools的lib库
 *  在Makefile中增加-DSOFA-PBRPC_PROFILING的编译选项
 
