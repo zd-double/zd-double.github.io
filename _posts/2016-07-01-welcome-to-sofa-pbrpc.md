@@ -30,7 +30,7 @@ Wiki: [https://github.com/baidu/sofa-pbrpc/wiki](https://github.com/baidu/sofa-p
 * Provide web monitor.
 * Provide python client library.
 * Provide WebService to implement a web server. 
-* Provide Profiling.
+* Support Profiling.
 
 # Dependings
 
