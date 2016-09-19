@@ -1,7 +1,7 @@
 title: sofa-pbrpc
 description: Sofa-pbrpc Blog
 author: sofa-pbrpc
-logo: https://github.com/zd-double/zd-double.github.io/blob/master/static/img/avatar.png
+logo: http://aboutashu.com/hcz-jekyll-blog/static/img/avatar.png 
 github: https://github.com/zd-double/sofa-pbrpc
 about: A light-weight RPC implement of google protobuf RPC framework.
 disqus_shortname: zddouble
